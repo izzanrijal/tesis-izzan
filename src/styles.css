@@ -4,6 +4,133 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   DECK DESIGN SYSTEM — "Konsultan Hijau"
+   Semua warna slide memakai token --s-* di bawah.
+   ============================================================ */
+
+@theme inline {
+  --color-paper: var(--s-paper);
+  --color-panel: var(--s-panel);
+  --color-ink: var(--s-ink);
+  --color-forest: var(--s-forest);
+  --color-forest-deep: var(--s-forest-deep);
+  --color-emerald: var(--s-emerald);
+  --color-jade: var(--s-jade);
+  --color-mint: var(--s-mint);
+  --color-mint-soft: var(--s-mint-soft);
+  --color-lime: var(--s-lime);
+  --color-flag: var(--s-flag);
+  --color-slate: var(--s-slate);
+  --color-rule: var(--s-rule);
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --s-paper: #f2f1ea;
+  --s-panel: #eceadf;
+  --s-ink: #12261d;
+  --s-forest-deep: #082a1e;
+  --s-forest: #0e4632;
+  --s-emerald: #17694a;
+  --s-jade: #1e8a5f;
+  --s-mint: #d2e9cf;
+  --s-mint-soft: #e6f2e3;
+  --s-lime: #b5d923;
+  --s-flag: #d81159;
+  --s-slate: #5b6660;
+  --s-rule: #d3d1c5;
+}
+
+/* ---------- Kanvas slide 1920x1080 ---------- */
+.slide-content {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  position: relative;
+  background: var(--s-paper);
+  color: var(--s-ink);
+  font-family: var(--font-sans);
+
+  --slide-hero: 118px;
+  --slide-title: 56px;
+  --slide-subtitle: 40px;
+  --slide-body-lg: 32px;
+  --slide-body: 27px;
+  --slide-caption: 23px;
+  --slide-kicker: 21px;
+  --slide-chrome: 20px;
+}
+
+.slide-hero {
+  font-family: var(--font-display);
+  font-size: var(--slide-hero);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+.slide-title {
+  font-family: var(--font-display);
+  font-size: var(--slide-title);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+.slide-subtitle {
+  font-family: var(--font-display);
+  font-size: var(--slide-subtitle);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.slide-body-lg {
+  font-size: var(--slide-body-lg);
+  line-height: 1.3;
+}
+.slide-body {
+  font-size: var(--slide-body);
+  line-height: 1.42;
+}
+.slide-caption {
+  font-size: var(--slide-caption);
+  line-height: 1.35;
+}
+.slide-kicker {
+  font-size: var(--slide-kicker);
+  line-height: 1.1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.slide-chrome,
+.slide-badge,
+.slide-footer {
+  font-size: var(--slide-chrome);
+  line-height: 1.2;
+}
+.slide-badge {
+  white-space: nowrap;
+}
+.slide-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Cetak ---------- */
+@media print {
+  @page {
+    size: 1920px 1080px landscape;
+    margin: 0;
+  }
+  .print-slide {
+    page-break-after: always;
+    break-after: page;
+  }
+}
+
+
 /*
  * Design system definition.
  *
