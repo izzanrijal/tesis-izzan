@@ -124,7 +124,7 @@
     size: 1920px 1080px landscape;
     margin: 0;
   }
-  .print-slide {
+  .deck-print-page {
     page-break-after: always;
     break-after: page;
   }
