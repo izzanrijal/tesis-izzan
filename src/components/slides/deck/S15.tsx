@@ -60,7 +60,7 @@ export function S15() {
                 0,003 – 0,084); McNemar pada ambang 20%: <strong>p &lt; 0,001</strong>
               </Bullet>
               <Bullet tone="jade">
-                GRACE 2.0 memakai regresi logistik (asumsi linear); Random Forest menangkap interaksi non-linear
+                GRACE 2.0 = regresi logistik (asumsi linear); RF menangkap interaksi non-linear
               </Bullet>
             </BulletList>
           </Panel>
