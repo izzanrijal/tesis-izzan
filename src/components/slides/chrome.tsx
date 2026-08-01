@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import { SECTIONS, TOTAL_SLIDES, type SectionName } from "@/lib/deck-data";
+import { useSlideIndex } from "./SlideIndexContext";
+
 
 /* ---------------- Band judul ---------------- */
 
@@ -43,14 +45,15 @@ function TitleBand({ image, title }: { image: string; title: string }) {
 
 function Breadcrumb({ active }: { active: SectionName }) {
   return (
-    <div className="slide-chrome flex shrink-0 items-center gap-[10px]">
+    <div className="flex shrink-0 items-center gap-[8px]" style={{ fontSize: 18 }}>
       {SECTIONS.map((s, i) => (
-        <span key={s} className="flex items-center gap-[10px]">
+        <span key={s} className="flex items-center gap-[8px]">
           {i > 0 && <span style={{ color: "var(--s-rule)" }}>·</span>}
           <span
             style={{
               color: s === active ? "var(--s-forest)" : "#9aa39d",
               fontWeight: s === active ? 700 : 400,
+              whiteSpace: "nowrap",
             }}
           >
             {s}
@@ -60,6 +63,7 @@ function Breadcrumb({ active }: { active: SectionName }) {
     </div>
   );
 }
+
 
 /* ---------------- Callout kesimpulan ---------------- */
 
@@ -102,7 +106,7 @@ export function ContentSlide({
   callout,
   children,
 }: {
-  index: number;
+  index?: number;
   section: SectionName;
   band: string;
   title: string;
@@ -112,7 +116,9 @@ export function ContentSlide({
   callout?: ReactNode;
   children: ReactNode;
 }) {
-  const num = String(index).padStart(2, "0");
+  const resolved = useSlideIndex(index);
+  const num = String(resolved).padStart(2, "0");
+
   return (
     <div className="slide-content flex flex-col">
       <TitleBand image={band} title={title} />
