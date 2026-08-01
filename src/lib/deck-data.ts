@@ -60,7 +60,7 @@ export const DECK_TITLE =
   "Random Forest untuk Prediksi Mortalitas In-Hospital pada Pasien STEMI dan NSTEMI di IGD";
 
 /* Diisi oleh registry agar penomoran footer selalu sinkron. */
-export const TOTAL_SLIDES = 36;
+export const TOTAL_SLIDES = 34;
 
 /* ------------------------------------------------------------------
    Rekonstruksi kurva dari metrik terlapor (model binormal).

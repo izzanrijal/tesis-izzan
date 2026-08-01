@@ -143,7 +143,7 @@ export function S01() {
             BARU KEPUTUSAN KLINIS
           </p>
           <span className="slide-num" style={{ color: "#7fae97", fontSize: 20 }}>
-            01 / 36
+            01 / 34
           </span>
         </div>
       </div>
