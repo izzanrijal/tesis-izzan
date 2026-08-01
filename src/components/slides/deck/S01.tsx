@@ -1,71 +1,107 @@
+const PEMBIMBING = [
+  "Prof. Dr. dr. Idar Mappangara, Sp.PD, Sp.JP(K)",
+  "Prof. Dr. dr. Muzakkir Amir, Sp.JP(K)",
+  "Dr. dr. Akhtar Fajar Muzakkir, Sp.JP(K)",
+  "Dr. dr. Az Hafid Nashar, Sp.JP(K)",
+  "Dr. dr. Andi Alfian Zainuddin, M.KM",
+];
+
 export function S01() {
   return (
     <div className="slide-content flex">
       {/* Kolom kiri — kertas */}
-      <div className="flex flex-1 flex-col" style={{ padding: "58px 72px 0 80px" }}>
-        <div className="flex shrink-0 items-baseline justify-between">
-          <p className="slide-kicker" style={{ color: "var(--s-forest)" }}>
-            Tesis · Program Studi Kardiologi
-          </p>
-        </div>
-        <div style={{ height: 1, background: "var(--s-rule)", marginTop: 22 }} />
+      <div className="flex flex-1 flex-col" style={{ padding: "48px 64px 40px 80px" }}>
+        <p className="slide-kicker shrink-0" style={{ color: "var(--s-forest)" }}>
+          TESIS · PROGRAM PENDIDIKAN DOKTER SPESIALIS
+        </p>
+        <div className="shrink-0" style={{ height: 1, background: "var(--s-rule)", marginTop: 16 }} />
 
-        <div className="flex min-h-0 flex-1 flex-col justify-center" style={{ paddingRight: 40 }}>
-          <p className="slide-kicker" style={{ color: "var(--s-jade)" }}>
-            Sindrom Koroner Akut · STEMI &amp; NSTEMI
-          </p>
+        <div className="flex min-h-0 flex-1 flex-col justify-center" style={{ paddingRight: 24 }}>
           <h1
-            className="slide-hero"
-            style={{ color: "var(--s-forest)", marginTop: 26, maxWidth: 1080 }}
+            style={{
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
+              fontSize: 46,
+              lineHeight: 1.1,
+              letterSpacing: "-0.02em",
+              color: "var(--s-forest)",
+              maxWidth: 1130,
+            }}
           >
-            RANDOM
-            <br />
-            FOREST
+            MODEL RANDOM FOREST UNTUK PREDIKSI MORTALITAS IN-HOSPITAL PADA PASIEN INFARK
+            MIOKARD DENGAN ELEVASI SEGMEN ST (STEMI) DAN TANPA ELEVASI SEGMEN ST (NSTEMI)
+            DI INSTALASI GAWAT DARURAT
           </h1>
-          <div
-            style={{ width: 172, height: 12, background: "var(--s-lime)", marginTop: 34 }}
-          />
+
+          <div style={{ width: 148, height: 10, background: "var(--s-lime)", marginTop: 22 }} />
+
           <p
-            className="slide-subtitle"
-            style={{ color: "var(--s-ink)", marginTop: 34, maxWidth: 990, fontWeight: 600 }}
+            style={{
+              fontSize: 23,
+              lineHeight: 1.35,
+              fontStyle: "italic",
+              color: "var(--s-slate)",
+              marginTop: 22,
+              maxWidth: 1080,
+            }}
           >
-            Prediksi mortalitas in-hospital pasien STEMI dan NSTEMI di Instalasi Gawat Darurat
+            Random Forest Model for Predicting In-Hospital Mortality in Patients with ST-Segment
+            Elevation Myocardial Infarction (STEMI) and Non-ST-Segment Elevation Myocardial
+            Infarction (NSTEMI) in the Emergency Department
           </p>
-          <p
-            className="slide-body-lg"
-            style={{ color: "var(--s-slate)", marginTop: 22, maxWidth: 900 }}
-          >
-            Model 13 variabel rutin yang tersedia dalam 24 jam pertama — menemukan pasien
-            berisiko tinggi sebelum syok kardiogenik terjadi.
-          </p>
+
+          <div className="flex" style={{ gap: 64, marginTop: 30 }}>
+            <div style={{ minWidth: 330 }}>
+              <p style={{ fontSize: 18, letterSpacing: "0.1em", color: "var(--s-jade)", fontWeight: 700 }}>
+                DISUSUN DAN DIAJUKAN OLEH
+              </p>
+              <p
+                style={{
+                  fontSize: 27,
+                  fontWeight: 700,
+                  color: "var(--s-forest)",
+                  marginTop: 10,
+                  lineHeight: 1.25,
+                }}
+              >
+                dr. Izzan Rijal Muslim
+              </p>
+              <p style={{ fontSize: 21, color: "var(--s-slate)", marginTop: 4 }}>C165221010</p>
+            </div>
+
+            <div className="min-w-0 flex-1" style={{ borderLeft: "3px solid var(--s-rule)", paddingLeft: 28 }}>
+              <p style={{ fontSize: 18, letterSpacing: "0.1em", color: "var(--s-jade)", fontWeight: 700 }}>
+                PEMBIMBING
+              </p>
+              <ul style={{ marginTop: 10 }}>
+                {PEMBIMBING.map((p) => (
+                  <li
+                    key={p}
+                    style={{ fontSize: 21, lineHeight: 1.45, color: "var(--s-ink)" }}
+                  >
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div className="shrink-0" style={{ paddingBottom: 46 }}>
-          <div className="slide-chrome flex gap-16" style={{ color: "var(--s-ink)" }}>
-            <span>
-              <strong style={{ color: "var(--s-forest)" }}>1.524</strong> PASIEN
-            </span>
-            <span>
-              <strong style={{ color: "var(--s-forest)" }}>13</strong> PREDIKTOR
-            </span>
-            <span>
-              <strong style={{ color: "var(--s-forest)" }}>115</strong> KEMATIAN (7,5%)
-            </span>
-            <span>JANUARI 2024 — DESEMBER 2025</span>
-          </div>
-          <div style={{ height: 1, background: "var(--s-rule)", margin: "22px 0" }} />
-          <p className="slide-chrome" style={{ color: "#96a09a", letterSpacing: "0.06em" }}>
-            PJT RSUP DR. WAHIDIN SUDIROHUSODO · MAKASSAR
+        <div className="shrink-0">
+          <div style={{ height: 1, background: "var(--s-rule)", marginBottom: 18 }} />
+          <p style={{ fontSize: 19, lineHeight: 1.5, letterSpacing: "0.04em", color: "#7d8a83" }}>
+            PROGRAM PENDIDIKAN DOKTER SPESIALIS ILMU PENYAKIT JANTUNG DAN PEMBULUH DARAH
+            <br />
+            FAKULTAS KEDOKTERAN UNIVERSITAS HASANUDDIN · MAKASSAR · 2026
+            <br />
+            PJT RSUP DR. WAHIDIN SUDIROHUSODO
           </p>
         </div>
       </div>
 
       {/* Kolom kanan — panel mint */}
-      <div
-        className="relative flex flex-col"
-        style={{ width: 620, background: "var(--s-mint)" }}
-      >
-        <div className="flex flex-1 flex-col justify-center" style={{ padding: "0 62px" }}>
+      <div className="relative flex flex-col" style={{ width: 560, background: "var(--s-mint)" }}>
+        <div className="flex flex-1 flex-col justify-center" style={{ padding: "0 54px" }}>
           <p className="slide-kicker" style={{ color: "var(--s-emerald)" }}>
             Area di bawah kurva ROC
           </p>
@@ -73,36 +109,41 @@ export function S01() {
             className="slide-num"
             style={{
               color: "var(--s-forest)",
-              fontSize: 216,
+              fontSize: 186,
               lineHeight: 0.86,
               letterSpacing: "-0.05em",
-              marginTop: 26,
+              marginTop: 22,
             }}
           >
             0,819
           </p>
-          <p
-            className="slide-subtitle"
-            style={{ color: "var(--s-forest)", marginTop: 30, maxWidth: 480 }}
-          >
+          <p className="slide-subtitle" style={{ color: "var(--s-forest)", fontSize: 34, marginTop: 26 }}>
             Diskriminasi baik untuk mortalitas in-hospital
           </p>
-          <p className="slide-body" style={{ color: "var(--s-emerald)", marginTop: 18 }}>
+          <p className="slide-body" style={{ color: "var(--s-emerald)", marginTop: 16 }}>
             Brier 0,061 · AUPRC 0,301 · 5-fold × 10 seed
+          </p>
+          <div style={{ height: 1, background: "#b9d6b4", margin: "26px 0" }} />
+          <p style={{ fontSize: 21, lineHeight: 1.6, color: "var(--s-emerald)" }}>
+            1.524 pasien · 13 prediktor
+            <br />
+            115 kematian in-hospital (7,5%)
+            <br />
+            Januari 2024 — Desember 2025
           </p>
         </div>
 
         <div
           className="flex shrink-0 items-center justify-between"
-          style={{ background: "var(--s-forest)", padding: "34px 62px", height: 178 }}
+          style={{ background: "var(--s-forest)", padding: "30px 54px", height: 150 }}
         >
-          <p className="slide-subtitle" style={{ color: "#ffffff", fontSize: 32, lineHeight: 1.25 }}>
+          <p style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: "#ffffff", fontSize: 27, lineHeight: 1.25 }}>
             BUKTI DULU,
             <br />
             BARU KEPUTUSAN KLINIS
           </p>
-          <span className="slide-num" style={{ color: "#7fae97", fontSize: 22 }}>
-            01 / 21
+          <span className="slide-num" style={{ color: "#7fae97", fontSize: 20 }}>
+            01 / 34
           </span>
         </div>
       </div>

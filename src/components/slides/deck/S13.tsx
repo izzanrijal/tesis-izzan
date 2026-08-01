@@ -1,123 +1,65 @@
-import { BANDS, TRIAGE } from "@/lib/deck-data";
+import { BANDS, FIGS, TRIAGE } from "@/lib/deck-data";
 import { Callout, ContentSlide } from "../chrome";
-import { Panel } from "../ui";
-
-const TONE = [
-  { bg: "var(--s-mint-soft)", bar: "var(--s-jade)", fg: "var(--s-forest)" },
-  { bg: "var(--s-mint)", bar: "var(--s-emerald)", fg: "var(--s-forest)" },
-  { bg: "var(--s-forest)", bar: "var(--s-lime)", fg: "#ffffff" },
-];
+import { FigureBox } from "../figure";
 
 export function S13() {
-  const maxRate = 24.4;
   return (
     <ContentSlide
-      index={13}
       section="Interpretasi"
       band={BANDS.clinic}
-      title="Triase tiga tingkat: gradien mortalitas 48 kali lipat dari bangsal ke ICU"
-      metaTitle="Sistem triase bertingkat berbasis dua ambang batas"
-      basis="Basis: 1.524 pasien, 115 kematian; stratifikasi memakai ambang 0,018 dan 0,104 dari model final"
-      source="Tabel 3.4 — Sistem Triase Bertingkat; Gambar 3.14"
+      title="Triase tiga tingkat memisahkan mortalitas 0,5% hingga 24,4%"
+      metaTitle="Sistem triase bertingkat berbasis probabilitas"
+      basis="Basis: strata diturunkan dan dinilai pada prediksi out-of-fold kohort yang sama (validasi internal)"
+      source="Tabel 3.4 dan Gambar 3.14 — Sistem triase bertingkat"
       callout={
-        <Callout label="Nilai triase:">
-          Kelompok ICU hanya <strong>22% populasi</strong> namun mencakup{" "}
-          <strong>71% seluruh kematian</strong> — alokasi tempat tidur menjadi jauh lebih terarah.
+        <Callout label="Batasan tegas:">
+          Label ward, HCU, dan ICU adalah <strong>usulan strata risiko</strong>, bukan
+          rekomendasi penempatan otomatis; keputusan lokasi perawatan tetap memerlukan penilaian
+          klinis dan validasi eksternal.
         </Callout>
       }
     >
-      <div className="grid h-full min-h-0" style={{ gridTemplateColumns: "1fr 560px", gap: 52 }}>
-        <div className="flex min-w-0 flex-col justify-between">
-          {TRIAGE.map((t, i) => {
-            const tone = TONE[i];
-            return (
-              <div
-                key={t.tier}
-                className="flex items-center"
-                style={{
-                  background: tone.bg,
-                  borderLeft: `10px solid ${tone.bar}`,
-                  padding: "22px 30px",
-                  gap: 30,
-                }}
-              >
-                <div style={{ width: 300 }}>
-                  <p className="slide-subtitle" style={{ color: tone.fg, fontSize: 34 }}>
-                    {t.tier}
-                  </p>
-                  <p
-                    className="slide-caption"
-                    style={{ color: i === 2 ? "#a9c9ba" : "var(--s-slate)", marginTop: 4 }}
-                  >
-                    {t.unit} · probabilitas {t.range}
-                  </p>
-                </div>
-                <div className="min-w-0 flex-1">
-                  <div
-                    style={{
-                      height: 34,
-                      width: `${(t.rate / maxRate) * 100}%`,
-                      background: tone.bar,
-                      minWidth: 12,
-                    }}
-                  />
-                  <p
-                    className="slide-caption"
-                    style={{ color: i === 2 ? "#a9c9ba" : "var(--s-slate)", marginTop: 8 }}
-                  >
-                    {t.n} pasien · {t.deaths} kematian
-                  </p>
-                </div>
-                <p
-                  className="slide-num shrink-0"
-                  style={{ color: tone.fg, fontSize: 54, width: 150, textAlign: "right" }}
-                >
-                  {t.rate.toFixed(1).replace(".", ",")}%
-                </p>
-              </div>
-            );
-          })}
-        </div>
+      <div className="grid h-full min-h-0" style={{ gridTemplateColumns: "1fr 700px", gap: 42 }}>
+        <FigureBox src={FIGS.triage} alt="Diagram sistem triase bertingkat" />
 
-        <Panel title="Mengapa gradien ini penting" subtitle="Rasio mortalitas ICU : Ward = 48,8 : 1">
-          <div className="flex h-full flex-col justify-around">
-            {[
-              {
-                v: "48,8×",
-                c: "var(--s-forest)",
-                l: "Gradien mortalitas ICU vs bangsal",
-                n: "0,5% → 24,4%",
-              },
-              {
-                v: "71%",
-                c: "var(--s-flag)",
-                l: "Kematian pada tingkat tertinggi",
-                n: "82 dari 115 kematian",
-              },
-              {
-                v: "22%",
-                c: "var(--s-jade)",
-                l: "Porsi populasi tingkat tertinggi",
-                n: "336 dari 1.524 pasien",
-              },
-            ].map((s) => (
-              <div key={s.v} className="flex min-w-0 flex-col">
-                <p className="slide-caption" style={{ color: "var(--s-slate)" }}>
-                  {s.l}
+        <div className="flex min-w-0 flex-col justify-center" style={{ gap: 18 }}>
+          {TRIAGE.map((t, i) => (
+            <div
+              key={t.tier}
+              className="flex items-center justify-between"
+              style={{
+                background: i === 2 ? "var(--s-forest)" : "var(--s-panel)",
+                borderLeft: `10px solid ${i === 2 ? "var(--s-flag)" : "var(--s-jade)"}`,
+                padding: "20px 26px",
+              }}
+            >
+              <div className="min-w-0">
+                <p
+                  className="slide-subtitle"
+                  style={{ color: i === 2 ? "#ffffff" : "var(--s-forest)", fontSize: 32 }}
+                >
+                  {t.tier} · {t.unit}
                 </p>
                 <p
-                  className="slide-num"
-                  style={{ color: s.c, fontSize: 58, lineHeight: 1.02, marginTop: 4 }}
+                  className="slide-caption"
+                  style={{ color: i === 2 ? "#a9c9ba" : "var(--s-slate)", marginTop: 4 }}
                 >
-                  {s.v}
-                </p>
-                <p className="slide-caption" style={{ color: "var(--s-slate)", marginTop: 2 }}>
-                  {s.n}
+                  Probabilitas {t.range} · {t.n} pasien · {t.deaths} kematian
                 </p>
               </div>
-            ))}
-          </div>
-        </Panel>
+              <p
+                className="slide-num shrink-0"
+                style={{ color: i === 2 ? "#ffffff" : "var(--s-forest)", fontSize: 52 }}
+              >
+                {t.rate.toString().replace(".", ",")}%
+              </p>
+            </div>
+          ))}
+          <p className="slide-caption" style={{ color: "var(--s-slate)" }}>
+            Kelompok ICU hanya 22% populasi namun memuat 82 dari 115 kematian — gradien risiko
+            sekitar 48 kali antara strata terendah dan tertinggi.
+          </p>
+        </div>
       </div>
     </ContentSlide>
   );
