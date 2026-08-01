@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ScaledSlide } from "@/components/slides/SlideLayout";
 import { SLIDES } from "@/components/slides/registry";
+import { SlideIndexProvider } from "@/components/slides/SlideIndexContext";
 import { DECK_TITLE } from "@/lib/deck-data";
 
 export const Route = createFileRoute("/")({
@@ -75,7 +76,9 @@ function Deck() {
       <div className="bg-paper">
         {SLIDES.map(({ Component }, i) => (
           <div key={i} className="deck-print-page">
-            <Component />
+            <SlideIndexProvider index={i + 1}>
+              <Component />
+            </SlideIndexProvider>
           </div>
         ))}
       </div>
@@ -104,7 +107,9 @@ function Deck() {
                 style={{ border: "2px solid var(--s-rule)" }}
               >
                 <ScaledSlide>
-                  <Component />
+                  <SlideIndexProvider index={i + 1}>
+                    <Component />
+                  </SlideIndexProvider>
                 </ScaledSlide>
               </div>
               <p className="slide-chrome" style={{ color: "var(--s-slate)", marginTop: 6 }}>
@@ -123,7 +128,9 @@ function Deck() {
     <main className="flex h-screen w-screen flex-col bg-forest-deep">
       <div className="min-h-0 flex-1">
         <ScaledSlide>
-          <Current />
+          <SlideIndexProvider index={slide}>
+            <Current />
+          </SlideIndexProvider>
         </ScaledSlide>
       </div>
       <div
