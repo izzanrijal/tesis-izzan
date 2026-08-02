@@ -24,12 +24,13 @@ export function S15() {
         <FigureBox src={FIGS.rocGrace} alt="Kurva ROC Random Forest dibandingkan GRACE 2.0" />
 
         <div className="flex min-w-0 flex-col justify-between">
-          <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-            <MetricBox label="AUC Random Forest" value="0,819" tone="mint" />
-            <MetricBox label="AUC GRACE 2.0" value="0,777" />
-            <MetricBox label="Selisih AUC" value="0,042" sub="IK 95% 0,003 – 0,084" />
-            <MetricBox label="Bootstrap p" value="0,029" sub="McNemar p<0,001" />
+          <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+            <MetricBox compact label="AUC Random Forest" value="0,819" tone="mint" />
+            <MetricBox compact label="AUC GRACE 2.0" value="0,777" />
+            <MetricBox compact label="Selisih AUC" value="0,042" sub="IK 95% 0,003 – 0,084" />
+            <MetricBox compact label="Bootstrap p" value="0,029" sub="McNemar p<0,001" />
           </div>
+
 
           <div>
             <p className="slide-subtitle" style={{ color: "var(--s-forest)", fontSize: 32 }}>
