@@ -41,17 +41,18 @@ export function S05() {
                 keluar rumah sakit.
               </Bullet>
               <Bullet tone="flag">
-                Eksklusi utama: data ekokardiografi admisi tidak tercatat karena POCUS belum
-                rutin di IGD.
+                Eksklusi utama: data ekokardiografi admisi tidak tercatat.
               </Bullet>
             </BulletList>
           </div>
-          <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+          <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: 18 }}>
             <MetricBox label="Dianalisis" value="1.524" sub="pasien" tone="mint" />
             <MetricBox label="Kematian" value="115" sub="7,5% prevalensi" />
-            <MetricBox label="STEMI" value="1.047" sub="68,7%" />
-            <MetricBox label="NSTEMI" value="477" sub="31,3%" />
           </div>
+          <p className="slide-caption" style={{ color: "var(--s-slate)", marginTop: 14 }}>
+            STEMI 1.047 (68,7%) · NSTEMI 477 (31,3%)
+          </p>
+
         </div>
       </div>
     </ContentSlide>

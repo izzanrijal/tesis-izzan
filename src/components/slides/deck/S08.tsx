@@ -29,21 +29,22 @@ export function S08() {
             </p>
             <p
               className="slide-num"
-              style={{ color: "var(--s-forest)", fontSize: 116, lineHeight: 0.95, marginTop: 4 }}
+              style={{ color: "var(--s-forest)", fontSize: 88, lineHeight: 0.98, marginTop: 4 }}
             >
               0,819
             </p>
             <p className="slide-body" style={{ color: "var(--s-jade)", marginTop: 8 }}>
-              Rerata 10 seed 0,8157 ± 0,0075 · IK 95% 0,8110 – 0,8204 · AUC vektor OOF 0,8189
+              Rerata 10 seed 0,8157 ± 0,0075 · IK 95% 0,8110 – 0,8204
             </p>
           </div>
 
-          <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+          <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: 18 }}>
             <MetricBox label="Brier score" value="0,0605" sub="Galat probabilitas rendah" tone="mint" />
             <MetricBox label="AUPRC" value="0,3005" sub="Baseline 0,075" />
-            <MetricBox label="Rentang antar-seed" value="0,8024 – 0,8247" />
+            <MetricBox label="Rentang antar-seed" value="0,802 – 0,825" />
             <MetricBox label="Prevalensi luaran" value="7,5%" sub="115 / 1.524" />
           </div>
+
         </div>
       </div>
     </ContentSlide>
