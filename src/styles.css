@@ -118,6 +118,17 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Penskalaan otomatis area isi (dipakai komponen AutoFit) */
+.slide-fit {
+  --fit: 1;
+  --slide-subtitle: calc(40px * var(--fit));
+  --slide-body-lg: calc(32px * var(--fit));
+  --slide-body: calc(27px * var(--fit));
+  --slide-caption: calc(23px * var(--fit));
+  --slide-kicker: calc(21px * var(--fit));
+}
+
+
 /* ---------- Cetak ---------- */
 @media print {
   @page {
