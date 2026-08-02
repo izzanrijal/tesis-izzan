@@ -25,40 +25,24 @@ export function S16() {
 
         <div className="flex min-w-0 flex-col justify-center">
           <DataTable
-            head={["Luaran", "AUC ± SD", "IK 95%", "AUPRC", "Prevalensi", "3 fitur teratas"]}
+            head={["Luaran", "AUC ± SD", "IK 95%", "AUPRC", "Prevalensi"]}
             rows={[
-              [
-                "Mortalitas",
-                "0,819 ± 0,007",
-                "0,805–0,833",
-                "0,301",
-                "7,5%",
-                "eGFR, ureum, LVOT VTI",
-              ],
-              [
-                "Syok kardiogenik baru",
-                "0,747 ± 0,005",
-                "0,736–0,757",
-                "0,500",
-                "11,2%",
-                "LVOT VTI, SBP, APTT",
-              ],
-              [
-                "Komposit",
-                "0,769 ± 0,004",
-                "0,761–0,777",
-                "0,635",
-                "12,9%",
-                "LVOT VTI, SBP, eGFR",
-              ],
+              ["Mortalitas", "0,819 ± 0,007", "0,805–0,833", "0,301", "7,5%"],
+              ["Syok kardiogenik baru", "0,747 ± 0,005", "0,736–0,757", "0,500", "11,2%"],
+              ["Komposit", "0,769 ± 0,004", "0,761–0,777", "0,635", "12,9%"],
             ]}
             highlightCol={1}
           />
           <p className="slide-caption" style={{ color: "var(--s-slate)", marginTop: 16 }}>
+            Tiga fitur teratas — mortalitas: eGFR, ureum, LVOT VTI · syok kardiogenik: LVOT VTI,
+            SBP, APTT · komposit: LVOT VTI, SBP, eGFR.
+          </p>
+          <p className="slide-caption" style={{ color: "var(--s-slate)", marginTop: 8 }}>
             Dari 1.524 subjek: 115 kematian, 171 kejadian syok kardiogenik baru, dan 197 kejadian
             komposit. Analisis luaran sekunder bersifat eksploratif.
           </p>
         </div>
+
       </div>
     </ContentSlide>
   );

@@ -37,18 +37,18 @@ export function S15() {
             </p>
             <BulletList>
               <Bullet>
-                GRACE memakai 8 variabel dengan asumsi hubungan linear; model ini memakai 13
-                variabel dan menangkap interaksi non-linear.
+                GRACE memakai 8 variabel dengan asumsi linear; model ini memakai 13 variabel dan
+                menangkap interaksi non-linear.
               </Bullet>
               <Bullet>
-                Tambahan parameter ekokardiografi (LVOT VTI, TAPSE) memberi informasi hemodinamik
-                yang tidak ada pada GRACE.
+                Parameter ekokardiografi (LVOT VTI, TAPSE) memberi informasi hemodinamik yang
+                tidak ada pada GRACE.
               </Bullet>
               <Bullet tone="flag">
-                Keunggulan diperoleh dengan biaya: ekokardiografi dini belum tersedia di semua
-                fasilitas.
+                Biayanya: ekokardiografi dini belum tersedia di semua fasilitas.
               </Bullet>
             </BulletList>
+
           </div>
         </div>
       </div>

@@ -109,7 +109,7 @@ export function S01() {
             className="slide-num"
             style={{
               color: "var(--s-forest)",
-              fontSize: 150,
+              fontSize: 132,
               lineHeight: 0.9,
               letterSpacing: "-0.04em",
               marginTop: 20,
