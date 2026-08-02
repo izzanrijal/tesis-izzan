@@ -22,14 +22,14 @@ export function S11() {
         <FigureBox src={FIGS.importance} alt="Diagram batang feature importance Gini" />
 
         <div className="min-w-0">
-          <table className="w-full" style={{ borderCollapse: "collapse", fontSize: 20 }}>
+          <table className="w-full" style={{ borderCollapse: "collapse", fontSize: 18 }}>
             <thead>
               <tr>
                 {["#", "Fitur", "Gini rerata", "SD antar model"].map((h, i) => (
                   <th
                     key={h}
                     style={{
-                      padding: "8px 10px",
+                      padding: "5px 10px",
                       textAlign: i === 1 ? "left" : "center",
                       color: "var(--s-forest)",
                       fontWeight: 700,
@@ -49,7 +49,7 @@ export function S11() {
                     <td
                       key={i}
                       style={{
-                        padding: "8px 10px",
+                        padding: "5px 10px",
                         textAlign: i === 1 ? "left" : "center",
                         color: ri < 3 ? "var(--s-forest)" : "var(--s-ink)",
                         fontWeight: ri < 3 ? 700 : 400,
