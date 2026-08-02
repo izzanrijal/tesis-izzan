@@ -33,10 +33,12 @@ function TitleBand({ image, title }: { image: string; title: string }) {
           paddingRight: 220,
           paddingBottom: 34,
           maxWidth: 1720,
+          fontSize: title.length > 62 ? 46 : undefined,
         }}
       >
         {title}
       </h2>
+
     </div>
   );
 }
