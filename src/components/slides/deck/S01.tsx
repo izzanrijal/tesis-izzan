@@ -110,7 +110,7 @@ export function S01() {
             style={{
               color: "var(--s-forest)",
               fontSize: 132,
-              lineHeight: 0.9,
+              lineHeight: 1.05,
               letterSpacing: "-0.04em",
               marginTop: 20,
             }}
