@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { SECTIONS, TOTAL_SLIDES, type SectionName } from "@/lib/deck-data";
 import { useSlideIndex } from "./SlideIndexContext";
+import { AutoFit } from "./fit";
+
 
 
 /* ---------------- Band judul ---------------- */
@@ -85,13 +87,17 @@ export function Callout({
         background: tone === "mint" ? "var(--s-mint)" : "#fbe6ee",
         borderLeft: `8px solid ${tone === "mint" ? "var(--s-forest)" : "var(--s-flag)"}`,
         minHeight: 92,
-        padding: "20px 32px",
+        padding: "18px 32px",
       }}
     >
-      <p className="slide-body-lg" style={{ color: "var(--s-ink)" }}>
+      <p
+        className={typeof children === "string" && children.length > 130 ? "slide-body" : "slide-body-lg"}
+        style={{ color: "var(--s-ink)" }}
+      >
         <strong style={{ color: "var(--s-forest)" }}>{label}</strong> {children}
       </p>
     </div>
+
   );
 }
 
@@ -150,12 +156,13 @@ export function ContentSlide({
           style={{ height: 1, background: "var(--s-rule)", marginTop: 14 }}
         />
 
-        <div className="min-h-0 flex-1" style={{ paddingTop: 26, paddingBottom: 22 }}>
-          {children}
+        <div className="flex min-h-0 flex-1 flex-col" style={{ paddingTop: 26 }}>
+          <AutoFit>{children}</AutoFit>
         </div>
 
-        {callout}
+        {callout && <div style={{ marginTop: 22, marginBottom: 4 }}>{callout}</div>}
       </div>
+
 
       <div
         className="slide-footer flex shrink-0 items-center justify-between"
