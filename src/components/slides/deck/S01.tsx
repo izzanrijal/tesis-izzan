@@ -109,14 +109,15 @@ export function S01() {
             className="slide-num"
             style={{
               color: "var(--s-forest)",
-              fontSize: 186,
-              lineHeight: 0.86,
-              letterSpacing: "-0.05em",
-              marginTop: 22,
+              fontSize: 132,
+              lineHeight: 1.05,
+              letterSpacing: "-0.04em",
+              marginTop: 20,
             }}
           >
             0,819
           </p>
+
           <p className="slide-subtitle" style={{ color: "var(--s-forest)", fontSize: 34, marginTop: 26 }}>
             Diskriminasi baik untuk mortalitas in-hospital
           </p>

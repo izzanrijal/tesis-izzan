@@ -90,12 +90,9 @@ export function S12() {
             </Bullet>
             <Bullet>
               Pada beeswarm, nilai LVEF rendah menggeser prediksi ke arah risiko mortalitas lebih
-              tinggi.
+              tinggi, dan lebar sebarannya menandakan efek yang bergantung konteks.
             </Bullet>
-            <Bullet>
-              Lebar sebaran menandakan efek LVEF <strong>bergantung konteks variabel lain</strong> —
-              konsisten dengan fisiologi gagal jantung yang kompleks.
-            </Bullet>
+
             <Bullet tone="jade">
               Waterfall memecah satu prediksi menjadi kontribusi aditif per fitur.
             </Bullet>

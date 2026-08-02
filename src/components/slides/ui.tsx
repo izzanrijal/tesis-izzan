@@ -106,8 +106,9 @@ export function Bullet({
 }
 
 export function BulletList({ children }: { children: ReactNode }) {
-  return <ul className="flex flex-col gap-[14px]">{children}</ul>;
+  return <ul className="flex flex-col" style={{ gap: "calc(18px * var(--fit, 1))" }}>{children}</ul>;
 }
+
 
 /* Angka besar */
 export function Stat({
@@ -265,22 +266,30 @@ export function MetricBox({
   value,
   sub,
   tone = "paper",
+  compact = false,
 }: {
   label: string;
   value: string;
   sub?: string;
   tone?: "paper" | "mint" | "forest";
+  compact?: boolean;
 }) {
   const bg =
     tone === "forest" ? "var(--s-forest)" : tone === "mint" ? "var(--s-mint)" : "var(--s-panel)";
   const fg = tone === "forest" ? "#ffffff" : "var(--s-forest)";
   const subFg = tone === "forest" ? "#a9c9ba" : "var(--s-slate)";
   return (
-    <div className="flex min-w-0 flex-col justify-center" style={{ background: bg, padding: "20px 24px" }}>
+    <div
+      className="flex min-w-0 flex-col justify-center"
+      style={{ background: bg, padding: compact ? "14px 20px" : "20px 24px" }}
+    >
       <p className="slide-caption" style={{ color: subFg }}>
         {label}
       </p>
-      <p className="slide-num" style={{ color: fg, fontSize: 42, marginTop: 6 }}>
+      <p
+        className="slide-num"
+        style={{ color: fg, fontSize: compact ? 34 : 42, marginTop: compact ? 2 : 6 }}
+      >
         {value}
       </p>
       {sub && (
@@ -291,6 +300,7 @@ export function MetricBox({
     </div>
   );
 }
+
 
 /* Kolom vertikal dengan garis pemisah kiri */
 export function RuledColumn({ children }: { children: ReactNode }) {
