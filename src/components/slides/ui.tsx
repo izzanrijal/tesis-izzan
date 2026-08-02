@@ -106,8 +106,9 @@ export function Bullet({
 }
 
 export function BulletList({ children }: { children: ReactNode }) {
-  return <ul className="flex flex-col gap-[14px]">{children}</ul>;
+  return <ul className="flex flex-col" style={{ gap: "calc(18px * var(--fit, 1))" }}>{children}</ul>;
 }
+
 
 /* Angka besar */
 export function Stat({
