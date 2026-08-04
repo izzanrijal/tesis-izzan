@@ -68,15 +68,22 @@ for (const items of slides) {
         },
       }));
       const maxSize = Math.max(...it.runs.map((r) => r.size));
+      const single = (it.lines ?? 1) <= 1;
+      // satu baris: jangan dibungkus (metrik font PowerPoint berbeda),
+      // banyak baris: beri kelonggaran lebar 6%.
+      const wNat = inch(Math.max(it.w, (it.natW ?? 0) + 6));
+      const w = single
+        ? Math.min(13.333 - pos.x, Math.max(pos.w, wNat) + 0.08)
+        : Math.min(13.333 - pos.x, pos.w * 1.06 + 0.05);
       s.addText(runs, {
         ...pos,
-        // sedikit kelonggaran agar pembungkusan baris PowerPoint tidak memotong
-        w: Math.min(13.333 - pos.x, pos.w + 0.06),
-        h: pos.h + 0.04,
+        w,
+        x: it.align === "right" ? Math.max(0, pos.x + pos.w - w) : pos.x,
+        h: pos.h + 0.05,
         align: it.align === "right" ? "right" : it.align === "center" ? "center" : "left",
         valign: "top",
         margin: 0,
-        wrap: true,
+        wrap: !single,
         lineSpacingMultiple: Math.max(0.9, Math.min(2, it.lineMul)),
         charSpacing: it.letter ? Math.round(it.letter * 0.5 * 10) / 10 : 0,
         fontSize: Math.max(6, maxSize),
@@ -87,4 +94,10 @@ for (const items of slides) {
 }
 
 await pptx.writeFile({ fileName: OUT });
+
+// pptxgenjs menulis notesMasterIdLst pada urutan yang ditolak PowerPoint.
+{
+  const AdmZip = (await import("node:zlib")).constants && null;
+}
 console.log("selesai:", OUT, slides.length, "slide");
+
