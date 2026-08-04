@@ -63,12 +63,12 @@ for (const items of slides) {
           color: r.color,
           fontSize: Math.max(6, r.size),
           fontFace: /Archivo/i.test(r.face) ? "Archivo" : "IBM Plex Sans",
-          breakLine: false,
-          ...(i === 0 ? {} : {}),
+          breakLine: !!r.br,
         },
       }));
       const maxSize = Math.max(...it.runs.map((r) => r.size));
-      const single = (it.lines ?? 1) <= 1;
+      const hasBr = it.runs.some((r) => r.br);
+      const single = (it.lines ?? 1) <= 1 && !hasBr;
       // satu baris: jangan dibungkus (metrik font PowerPoint berbeda),
       // banyak baris: beri kelonggaran lebar 6%.
       const wNat = inch(Math.max(it.w, (it.natW ?? 0) + 6));
