@@ -94,10 +94,5 @@ for (const items of slides) {
 }
 
 await pptx.writeFile({ fileName: OUT });
-
-// pptxgenjs menulis notesMasterIdLst pada urutan yang ditolak PowerPoint.
-{
-  const AdmZip = (await import("node:zlib")).constants && null;
-}
 console.log("selesai:", OUT, slides.length, "slide");
 
