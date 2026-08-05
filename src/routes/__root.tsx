@@ -81,6 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "PJT RSUP Dr. Wahidin Sudirohusodo" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { title: "Prediksi Mortalitas SKA dengan Random Forest — Deck Tesis" },
+      { property: "og:title", content: "Prediksi Mortalitas SKA dengan Random Forest — Deck Tesis" },
+      { name: "twitter:title", content: "Prediksi Mortalitas SKA dengan Random Forest — Deck Tesis" },
+      { name: "description", content: "Presentasi 21 slide: model Random Forest memprediksi mortalitas in-hospital pasien STEMI/NSTEMI di IGD dengan AUC 0,819." },
+      { property: "og:description", content: "Presentasi 21 slide: model Random Forest memprediksi mortalitas in-hospital pasien STEMI/NSTEMI di IGD dengan AUC 0,819." },
+      { name: "twitter:description", content: "Presentasi 21 slide: model Random Forest memprediksi mortalitas in-hospital pasien STEMI/NSTEMI di IGD dengan AUC 0,819." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7b4bd4ff-04c8-4750-a83b-136655ef091c/id-preview-d4187416--b176ed05-0849-486b-a9bb-32effe6ddaef.lovable.app-1785808148963.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7b4bd4ff-04c8-4750-a83b-136655ef091c/id-preview-d4187416--b176ed05-0849-486b-a9bb-32effe6ddaef.lovable.app-1785808148963.png" },
     ],
     links: [
       {

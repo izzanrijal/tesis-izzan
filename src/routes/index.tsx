@@ -14,11 +14,11 @@ export const Route = createFileRoute("/")({
         content:
           "Presentasi 21 slide: model Random Forest memprediksi mortalitas in-hospital pasien STEMI/NSTEMI di IGD dengan AUC 0,819.",
       },
-      { property: "og:title", content: "Prediksi Mortalitas SKA dengan Random Forest" },
+      { property: "og:title", content: "Prediksi Mortalitas SKA dengan Random Forest — Deck Tesis" },
       {
         property: "og:description",
         content:
-          "Deck tesis 21 slide: AUC 0,819, triase tiga tingkat, dan perbandingan dengan GRACE 2.0.",
+          "Presentasi 21 slide: model Random Forest memprediksi mortalitas in-hospital pasien STEMI/NSTEMI di IGD dengan AUC 0,819.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
