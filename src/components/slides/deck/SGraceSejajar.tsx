@@ -20,62 +20,63 @@ export function SGraceSejajar() {
         </Callout>
       }
     >
-      <div className="grid h-full min-h-0" style={{ gridTemplateColumns: "1fr 700px", gap: 40 }}>
-        <FigureBox
-          src={FIGS.rocSejajar}
-          alt="Kurva ROC skor GRACE lima dan delapan komponen dibandingkan Random Forest enam dan tiga belas parameter"
-          caption="Gambar 3.12 Kurva ROC model Random Forest dan skor GRACE pada populasi penelitian"
-        />
+      <div className="grid h-full min-h-0" style={{ gridTemplateColumns: "1fr 660px", gap: 40 }}>
+        <div className="flex min-h-0 flex-col">
+          <div className="min-h-0 flex-1">
+            <FigureBox
+              src={FIGS.rocSejajar}
+              alt="Kurva ROC skor GRACE lima dan delapan komponen dibandingkan Random Forest enam dan tiga belas parameter"
+              caption="Gambar 3.12 Kurva ROC Random Forest dan skor GRACE pada populasi penelitian"
+            />
+          </div>
+        </div>
 
-        <div className="flex min-w-0 flex-col justify-between">
-          <div>
-            <p className="slide-caption" style={{ color: "var(--s-forest)", fontWeight: 700 }}>
-              Tabel 3.8 Perbandingan AUC pada himpunan variabel yang sejajar
-            </p>
-            <div className="tbl-compact" style={{ marginTop: 10 }}>
-              <DataTable
-                align="left"
-                head={["Model", "AUC", "Parameter"]}
-                highlightCol={1}
-                rows={[
-                  [
-                    "Skor GRACE lima komponen",
-                    "0,7845",
-                    "Usia, denyut jantung, TD sistolik, kreatinin serum, kelas Killip",
-                  ],
-                  [
-                    "Skor GRACE delapan komponen",
-                    "0,7767",
-                    "Delapan komponen GRACE 2.0 (konsisten Tabel 3.7)",
-                  ],
-                  [
-                    "Random Forest enam parameter",
-                    "0,8042",
-                    "Usia, denyut jantung, TD sistolik, Killip, ureum, eGFR — rerata per seed 0,8006 ± 0,0055",
-                  ],
-                  [
-                    "Random Forest tiga belas parameter",
-                    "0,8189",
-                    "Tiga belas fitur model utama — rerata per seed 0,8157 ± 0,0075",
-                  ],
-                ]}
-              />
-            </div>
+        <div className="flex min-w-0 min-h-0 flex-col">
+          <p className="slide-caption shrink-0" style={{ color: "var(--s-forest)", fontWeight: 700 }}>
+            Tabel 3.8 Perbandingan AUC pada himpunan variabel yang sejajar
+          </p>
+          <div className="shrink-0" style={{ marginTop: 10 }}>
+            <DataTable
+              align="left"
+              head={["Model", "AUC", "Parameter"]}
+              highlightCol={1}
+              rows={[
+                [
+                  <span className="slide-caption">Skor GRACE lima komponen</span>,
+                  "0,7845",
+                  <span className="slide-caption">Usia, HR, TDS, kreatinin, Killip</span>,
+                ],
+                [
+                  <span className="slide-caption">Skor GRACE delapan komponen</span>,
+                  "0,7767",
+                  <span className="slide-caption">GRACE 2.0 lengkap (Tabel 3.7)</span>,
+                ],
+                [
+                  <span className="slide-caption">RF enam parameter</span>,
+                  "0,8042",
+                  <span className="slide-caption">GRACE-5 + ureum + eGFR (0,8006 ± 0,0055)</span>,
+                ],
+                [
+                  <span className="slide-caption">RF tiga belas parameter</span>,
+                  "0,8189",
+                  <span className="slide-caption">Model utama (0,8157 ± 0,0075)</span>,
+                ],
+              ]}
+            />
           </div>
 
-          <div className="list-compact" style={{ marginTop: 16 }}>
+          <div className="min-h-0 flex-1" style={{ marginTop: 18 }}>
             <BulletList>
               <Bullet>
-                Selisih Random Forest enam parameter vs GRACE lima komponen: +0,0196 (IK 95%
-                −0,0132 sampai +0,0534; bootstrap berpasangan 2.000 iterasi, p=0,233).
+                Selisih RF-6 vs GRACE-5: +0,0196 (IK 95% −0,0132 sampai +0,0534; bootstrap
+                berpasangan 2.000 iterasi, p=0,233).
               </Bullet>
               <Bullet>
-                Model utama tiga belas parameter: +0,0344 terhadap GRACE lima komponen dan +0,0422
-                terhadap GRACE delapan komponen.
+                Model tiga belas parameter: +0,0344 terhadap GRACE-5 dan +0,0422 terhadap GRACE-8.
               </Bullet>
               <Bullet tone="flag">
-                Tiga komponen GRACE 2.0 (henti jantung saat admisi 6/1.524, deviasi ST, peningkatan
-                biomarker) hampir tidak bervariasi sehingga tidak menambah daya diskriminasi.
+                Tiga komponen GRACE 2.0 (henti jantung 6/1.524, deviasi ST, biomarker) nyaris tanpa
+                variasi sehingga tidak menambah diskriminasi.
               </Bullet>
             </BulletList>
           </div>
