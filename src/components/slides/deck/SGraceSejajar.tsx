@@ -36,47 +36,81 @@ export function SGraceSejajar() {
             Tabel 3.8 Perbandingan AUC pada himpunan variabel yang sejajar
           </p>
           <div className="shrink-0" style={{ marginTop: 10 }}>
-            <DataTable
-              align="left"
-              head={["Model", "AUC", "Parameter"]}
-              highlightCol={1}
-              rows={[
-                [
-                  <span className="slide-caption">Skor GRACE lima komponen</span>,
-                  "0,7845",
-                  <span className="slide-caption">Usia, HR, TDS, kreatinin, Killip</span>,
-                ],
-                [
-                  <span className="slide-caption">Skor GRACE delapan komponen</span>,
-                  "0,7767",
-                  <span className="slide-caption">GRACE 2.0 lengkap (Tabel 3.7)</span>,
-                ],
-                [
-                  <span className="slide-caption">RF enam parameter</span>,
-                  "0,8042",
-                  <span className="slide-caption">GRACE-5 + ureum + eGFR (0,8006 ± 0,0055)</span>,
-                ],
-                [
-                  <span className="slide-caption">RF tiga belas parameter</span>,
-                  "0,8189",
-                  <span className="slide-caption">Model utama (0,8157 ± 0,0075)</span>,
-                ],
-              ]}
-            />
+            <table className="w-full" style={{ borderCollapse: "collapse" }}>
+              <thead>
+                <tr>
+                  {["Model", "AUC", "Parameter"].map((h, i) => (
+                    <th
+                      key={h}
+                      style={{
+                        fontSize: 22,
+                        fontWeight: 700,
+                        color: "var(--s-forest)",
+                        textAlign: "left",
+                        padding: "8px 12px",
+                        borderBottom: "3px solid var(--s-forest)",
+                        background: i === 1 ? "var(--s-mint-soft)" : "transparent",
+                      }}
+                    >
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Skor GRACE lima komponen", "0,7845", "Usia, HR, TDS, kreatinin, Killip"],
+                  ["Skor GRACE delapan komponen", "0,7767", "GRACE 2.0 lengkap (Tabel 3.7)"],
+                  ["RF enam parameter", "0,8042", "GRACE-5 + ureum + eGFR (0,8006 ± 0,0055)"],
+                  ["RF tiga belas parameter", "0,8189", "Model utama (0,8157 ± 0,0075)"],
+                ].map((r) => (
+                  <tr key={r[0]}>
+                    {r.map((c, i) => (
+                      <td
+                        key={i}
+                        style={{
+                          fontSize: i === 1 ? 24 : 21,
+                          lineHeight: 1.25,
+                          fontWeight: i === 1 ? 700 : 400,
+                          color: i === 1 ? "var(--s-forest)" : "var(--s-ink)",
+                          background: i === 1 ? "var(--s-mint-soft)" : "transparent",
+                          padding: "8px 12px",
+                          borderBottom: "1px solid var(--s-rule)",
+                        }}
+                      >
+                        {c}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
 
-          <div className="min-h-0 flex-1 list-compact" style={{ marginTop: 14 }}>
-            <BulletList>
-              <Bullet>
-                RF-6 vs GRACE-5: +0,0196 (IK 95% −0,0132 s.d. +0,0534; p=0,233).
-              </Bullet>
-              <Bullet>
-                RF-13: +0,0344 vs GRACE-5; +0,0422 vs GRACE-8.
-              </Bullet>
-              <Bullet tone="flag">
-                Henti jantung (6/1.524), deviasi ST, dan biomarker nyaris tanpa variasi.
-              </Bullet>
-            </BulletList>
+          <div className="min-h-0 flex-1" style={{ marginTop: 18 }}>
+            <div className="flex flex-col" style={{ gap: 12 }}>
+              {[
+                ["RF-6 vs GRACE-5: +0,0196 (IK 95% −0,0132 s.d. +0,0534; p=0,233)", false],
+                ["RF-13: +0,0344 vs GRACE-5 dan +0,0422 vs GRACE-8", false],
+                [
+                  "Henti jantung (6/1.524), deviasi ST, dan biomarker nyaris tanpa variasi",
+                  true,
+                ],
+              ].map(([t, flag]) => (
+                <div key={String(t)} className="flex gap-3">
+                  <span
+                    style={{
+                      width: 12,
+                      height: 12,
+                      marginTop: 9,
+                      flexShrink: 0,
+                      background: flag ? "var(--s-flag)" : "var(--s-forest)",
+                    }}
+                  />
+                  <p style={{ fontSize: 23, lineHeight: 1.32, color: "var(--s-ink)" }}>{t}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
