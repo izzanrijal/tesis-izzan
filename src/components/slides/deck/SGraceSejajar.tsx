@@ -87,14 +87,11 @@ export function SGraceSejajar() {
           </div>
 
           <div className="min-h-0 flex-1" style={{ marginTop: 18 }}>
-            <div className="flex flex-col" style={{ gap: 12 }}>
+            <div className="flex flex-col" style={{ gap: 10 }}>
               {[
                 ["RF-6 vs GRACE-5: +0,0196 (IK 95% −0,0132 s.d. +0,0534; p=0,233)", false],
                 ["RF-13: +0,0344 vs GRACE-5 dan +0,0422 vs GRACE-8", false],
-                [
-                  "Henti jantung (6/1.524), deviasi ST, dan biomarker nyaris tanpa variasi",
-                  true,
-                ],
+                ["Henti jantung, deviasi ST, biomarker nyaris tanpa variasi", true],
               ].map(([t, flag]) => (
                 <div key={String(t)} className="flex gap-3">
                   <span
