@@ -1,7 +1,6 @@
 import { BANDS, FIGS } from "@/lib/deck-data";
 import { Callout, ContentSlide } from "../chrome";
 import { FigureBox } from "../figure";
-import { Bullet, BulletList, DataTable } from "../ui";
 
 export function SGraceSejajar() {
   return (
