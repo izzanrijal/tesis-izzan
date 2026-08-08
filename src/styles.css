@@ -280,15 +280,3 @@
     color: var(--color-foreground);
   }
 }
-
-/* Tabel padat untuk slide dengan banyak baris teks */
-.tbl-compact th,
-.tbl-compact td {
-  font-size: 21px !important;
-  line-height: 1.25;
-  padding: 8px 12px !important;
-}
-.list-compact p {
-  font-size: 22px !important;
-  line-height: 1.3;
-}
