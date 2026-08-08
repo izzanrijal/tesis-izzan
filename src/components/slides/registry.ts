@@ -19,6 +19,7 @@ import { S13 } from "./deck/S13";
 import { S16 } from "./deck/S16";
 import { S14 } from "./deck/S14";
 import { S15 } from "./deck/S15";
+import { SGraceSejajar } from "./deck/SGraceSejajar";
 import { P41, P42, P43, P44, P45, P46, P47 } from "./deck/Pembahasan";
 import { S17 } from "./deck/S17";
 import { S18 } from "./deck/S18";
@@ -51,6 +52,7 @@ export const SLIDES: SlideEntry[] = [
   { title: "Tiga luaran", Component: S16 },
   { title: "RF vs XGBoost", Component: S14 },
   { title: "RF vs GRACE 2.0", Component: S15 },
+  { title: "Perbandingan variabel sejajar", Component: SGraceSejajar },
   { title: "Pembahasan 4.1 — performa model", Component: P41 },
   { title: "Pembahasan 4.2 — pemilihan algoritma", Component: P42 },
   { title: "Pembahasan 4.3 — fungsi ginjal", Component: P43 },

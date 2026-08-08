@@ -14,6 +14,7 @@ import figAblation from "@/assets/fig09_ablation.png.asset.json";
 import figTriage from "@/assets/fig10_triage.png.asset.json";
 import figRoc3 from "@/assets/fig11_roc_3outcomes.png.asset.json";
 import figRocGrace from "@/assets/fig11_roc_comparison.png.asset.json";
+import figRocSejajar from "@/assets/roc-grace5-rf6.png.asset.json";
 import figStrobe from "@/assets/strobe_flowchart_v6.png.asset.json";
 import svgTeori from "@/assets/kerangka-teori.svg.asset.json";
 import svgKonsep from "@/assets/kerangka-konsep.svg.asset.json";
@@ -38,6 +39,7 @@ export const FIGS = {
   triage: figTriage.url,
   roc3: figRoc3.url,
   rocGrace: figRocGrace.url,
+  rocSejajar: figRocSejajar.url,
   strobe: figStrobe.url,
   teori: svgTeori.url,
   konsep: svgKonsep.url,
@@ -60,7 +62,7 @@ export const DECK_TITLE =
   "Random Forest untuk Prediksi Mortalitas In-Hospital pada Pasien STEMI dan NSTEMI di IGD";
 
 /* Diisi oleh registry agar penomoran footer selalu sinkron. */
-export const TOTAL_SLIDES = 34;
+export const TOTAL_SLIDES = 35;
 
 /* ------------------------------------------------------------------
    Rekonstruksi kurva dari metrik terlapor (model binormal).
