@@ -39,6 +39,7 @@ export const FIGS = {
   triage: figTriage.url,
   roc3: figRoc3.url,
   rocGrace: figRocGrace.url,
+  rocSejajar: figRocSejajar.url,
   strobe: figStrobe.url,
   teori: svgTeori.url,
   konsep: svgKonsep.url,
