@@ -32,7 +32,7 @@ export function SGraceSejajar() {
             <p className="slide-caption" style={{ color: "var(--s-forest)", fontWeight: 700 }}>
               Tabel 3.8 Perbandingan AUC pada himpunan variabel yang sejajar
             </p>
-            <div style={{ marginTop: 10 }}>
+            <div className="tbl-compact" style={{ marginTop: 10 }}>
               <DataTable
                 align="left"
                 head={["Model", "AUC", "Parameter"]}
@@ -63,7 +63,7 @@ export function SGraceSejajar() {
             </div>
           </div>
 
-          <div style={{ marginTop: 18 }}>
+          <div className="list-compact" style={{ marginTop: 16 }}>
             <BulletList>
               <Bullet>
                 Selisih Random Forest enam parameter vs GRACE lima komponen: +0,0196 (IK 95%
