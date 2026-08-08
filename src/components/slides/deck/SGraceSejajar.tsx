@@ -65,18 +65,16 @@ export function SGraceSejajar() {
             />
           </div>
 
-          <div className="min-h-0 flex-1" style={{ marginTop: 18 }}>
+          <div className="min-h-0 flex-1 list-compact" style={{ marginTop: 14 }}>
             <BulletList>
               <Bullet>
-                Selisih RF-6 vs GRACE-5: +0,0196 (IK 95% −0,0132 sampai +0,0534; bootstrap
-                berpasangan 2.000 iterasi, p=0,233).
+                RF-6 vs GRACE-5: +0,0196 (IK 95% −0,0132 s.d. +0,0534; p=0,233).
               </Bullet>
               <Bullet>
-                Model tiga belas parameter: +0,0344 terhadap GRACE-5 dan +0,0422 terhadap GRACE-8.
+                RF-13: +0,0344 vs GRACE-5; +0,0422 vs GRACE-8.
               </Bullet>
               <Bullet tone="flag">
-                Tiga komponen GRACE 2.0 (henti jantung 6/1.524, deviasi ST, biomarker) nyaris tanpa
-                variasi sehingga tidak menambah diskriminasi.
+                Henti jantung (6/1.524), deviasi ST, dan biomarker nyaris tanpa variasi.
               </Bullet>
             </BulletList>
           </div>
