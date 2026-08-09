@@ -1,103 +1,60 @@
-import { BANDS } from "@/lib/deck-data";
+import { BANDS, FIGS } from "@/lib/deck-data";
 import { Callout, ContentSlide } from "../chrome";
+import { FigureBox } from "../figure";
 import { Bullet, BulletList, Panel } from "../ui";
 
-const CONTRIB = [
-  { f: "eGFR", v: 0.25 },
-  { f: "Ureum", v: 0.16 },
-  { f: "APTT", v: 0.08 },
-  { f: "Killip", v: 0.08 },
-];
-
 export function S12() {
-  const max = 0.28;
   return (
     <ContentSlide
-      index={12}
       section="Interpretasi"
       band={BANDS.data}
-      title="SHAP melampaui peringkat: efek interaksi yang tak terlihat oleh Gini"
-      metaTitle="Interpretasi SHAP: global dan per pasien"
-      basis="Basis: nilai SHAP pada model final; contoh dekomposisi diambil dari satu pasien risiko tinggi dengan probabilitas prediksi 87,2%"
-      source="Gambar 3.11 (SHAP bar), 3.12 (beeswarm), 3.13 (waterfall)"
+      title="Waterfall: satu prediksi dipecah menjadi kontribusi aditif per fitur"
+      metaTitle="SHAP tingkat individu — pasien risiko tinggi (p = 87,2%)"
+      basis="Basis: nilai SHAP TreeExplainer pada model final; contoh satu pasien dengan probabilitas prediksi 87,2%"
+      source="Gambar 3.13 — SHAP waterfall pasien risiko tinggi"
       callout={
         <Callout label="Nilai tambahnya:">
-          Dekomposisi per pasien memungkinkan <strong>penjelasan risiko yang dipersonalisasi</strong> —
-          klinisi melihat variabel mana yang mendorong angka tersebut.
+          Dekomposisi per pasien memungkinkan{" "}
+          <strong>penjelasan risiko yang dipersonalisasi</strong> — klinisi melihat variabel mana
+          yang mendorong angka tersebut, bukan sekadar skor akhir.
         </Callout>
       }
     >
-      <div className="grid h-full min-h-0" style={{ gridTemplateColumns: "1fr 620px", gap: 56 }}>
-        <div className="flex min-w-0 flex-col">
-          <p className="slide-caption" style={{ color: "var(--s-jade)", fontWeight: 700 }}>
-            DEKOMPOSISI WATERFALL — PASIEN RISIKO TINGGI (p = 87,2%)
-          </p>
+      <div className="grid h-full min-h-0" style={{ gridTemplateColumns: "1fr 560px", gap: 44 }}>
+        <FigureBox
+          src={FIGS.shapWaterfall}
+          alt="Diagram waterfall SHAP untuk satu pasien risiko tinggi"
+          caption="Gambar 3.13 Dekomposisi SHAP pada pasien dengan probabilitas prediksi 87,2%"
+        />
 
-          <div className="flex flex-col" style={{ marginTop: 26, gap: 18 }}>
-            {CONTRIB.map((c) => (
-              <div key={c.f} className="flex items-center" style={{ gap: 22 }}>
-                <span
-                  className="slide-body shrink-0"
-                  style={{ width: 150, color: "var(--s-ink)", fontWeight: 600 }}
-                >
-                  {c.f}
-                </span>
-                <div className="flex min-w-0 flex-1 items-center" style={{ gap: 16 }}>
-                  <div
-                    style={{
-                      width: `${(c.v / max) * 100}%`,
-                      height: 44,
-                      background: "var(--s-forest)",
-                    }}
-                  />
-                  <span
-                    className="slide-body shrink-0"
-                    style={{ color: "var(--s-jade)", fontWeight: 700 }}
-                  >
-                    +{c.v.toFixed(2).replace(".", ",")}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
+        <div className="flex min-w-0 flex-col" style={{ gap: 20 }}>
           <div
             className="flex items-center justify-between"
-            style={{ marginTop: 34, background: "var(--s-mint)", padding: "22px 28px" }}
+            style={{ background: "var(--s-mint)", padding: "18px 26px" }}
           >
             <span className="slide-body" style={{ color: "var(--s-forest)", fontWeight: 700 }}>
               Probabilitas prediksi akhir
             </span>
-            <span className="slide-num" style={{ color: "var(--s-forest)", fontSize: 48 }}>
+            <span className="slide-num" style={{ color: "var(--s-forest)", fontSize: 46 }}>
               87,2%
             </span>
           </div>
 
-          <p className="slide-caption" style={{ color: "var(--s-slate)", marginTop: 18 }}>
-            Kontribusi ditampilkan untuk empat fitur dengan nilai SHAP terbesar pada pasien
-            tersebut.
-          </p>
+          <Panel title="Cara membaca" subtitle="Dari nilai dasar menuju prediksi akhir">
+            <BulletList>
+              <Bullet>
+                Prediksi dimulai dari <strong>nilai dasar</strong>, lalu tiap fitur menambah atau
+                mengurangi risiko.
+              </Bullet>
+              <Bullet>
+                Kontribusi terbesar berasal dari <strong>eGFR dan ureum</strong>, diikuti APTT.
+              </Bullet>
+              <Bullet tone="jade">
+                Jumlah kontribusi tepat sama dengan selisih prediksi terhadap nilai dasar.
+              </Bullet>
+            </BulletList>
+          </Panel>
         </div>
-
-        <Panel title="Apa yang ditambahkan SHAP" subtitle="Konsisten dengan Gini, tetapi lebih kaya">
-          <BulletList>
-            <Bullet>
-              Tiga fitur teratas konsisten dengan Gini: <strong>eGFR, LVEF, ureum</strong>.
-            </Bullet>
-            <Bullet>
-              <strong>LVEF menunjukkan efek interaksional kuat</strong> — sebaran nilai SHAP-nya
-              lebar, sesuatu yang tidak terdeteksi Gini importance.
-            </Bullet>
-            <Bullet>
-              Pada beeswarm, nilai LVEF rendah menggeser prediksi ke arah risiko mortalitas lebih
-              tinggi, dan lebar sebarannya menandakan efek yang bergantung konteks.
-            </Bullet>
-
-            <Bullet tone="jade">
-              Waterfall memecah satu prediksi menjadi kontribusi aditif per fitur.
-            </Bullet>
-          </BulletList>
-        </Panel>
       </div>
     </ContentSlide>
   );

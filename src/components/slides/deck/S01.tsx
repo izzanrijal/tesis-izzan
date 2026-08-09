@@ -1,3 +1,5 @@
+import { TOTAL_SLIDES } from "@/lib/deck-data";
+
 const PEMBIMBING = [
   "Prof. Dr. dr. Idar Mappangara, Sp.PD, Sp.JP(K)",
   "Prof. Dr. dr. Muzakkir Amir, Sp.JP(K)",
@@ -144,7 +146,7 @@ export function S01() {
             BARU KEPUTUSAN KLINIS
           </p>
           <span className="slide-num" style={{ color: "#7fae97", fontSize: 20 }}>
-            01 / 34
+            01 / {TOTAL_SLIDES}
           </span>
         </div>
       </div>

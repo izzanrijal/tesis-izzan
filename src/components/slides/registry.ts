@@ -14,7 +14,11 @@ import { S10 } from "./deck/S10";
 import { SProbDist } from "./deck/SProbDist";
 import { S11 } from "./deck/S11";
 import { S12 } from "./deck/S12";
-import { SAblation } from "./deck/SAblation";
+import { SShapBar } from "./deck/SShapBar";
+import { SShapBees } from "./deck/SShapBees";
+import { SModel } from "./deck/SModel";
+import { SValiditas } from "./deck/SValiditas";
+import { SParamCount } from "./deck/SParamCount";
 import { S13 } from "./deck/S13";
 import { S16 } from "./deck/S16";
 import { S14 } from "./deck/S14";
@@ -38,16 +42,20 @@ export const SLIDES: SlideEntry[] = [
   { title: "Kerangka konsep", Component: SKerangkaKonsep },
   { title: "Desain studi & alur STROBE", Component: S05 },
   { title: "13 prediktor", Component: S06 },
+  { title: "Pengembangan model & protokol validasi", Component: SModel },
   { title: "Tabel 3.1 — karakteristik dasar", Component: STabel31 },
   { title: "Tabel 3.2 — STEMI vs NSTEMI", Component: STabel32 },
+  { title: "Analisis jumlah parameter optimal", Component: SParamCount },
   { title: "Kurva ROC — AUC 0,819", Component: S08 },
+  { title: "Mengapa model ini valid", Component: SValiditas },
   { title: "Dua ambang batas", Component: S09 },
   { title: "Matriks konfusi", Component: SConfusion },
   { title: "Kalibrasi, DCA & PR", Component: S10 },
   { title: "Distribusi probabilitas", Component: SProbDist },
   { title: "Feature importance (Gini)", Component: S11 },
-  { title: "Analisis SHAP", Component: S12 },
-  { title: "Analisis ablasi", Component: SAblation },
+  { title: "Analisis SHAP — kontribusi global", Component: SShapBar },
+  { title: "Analisis SHAP — beeswarm", Component: SShapBees },
+  { title: "Analisis SHAP — waterfall pasien", Component: S12 },
   { title: "Triase tiga tingkat", Component: S13 },
   { title: "Tiga luaran", Component: S16 },
   { title: "RF vs XGBoost", Component: S14 },
