@@ -74,27 +74,23 @@ export function SModel() {
           <BulletList>
             <Bullet>
               Hiperparameter ditetapkan <strong>berdasarkan literatur</strong>, bukan dioptimasi
-              pada data penelitian ini. Pendekatan ini dipilih secara sadar untuk menghindari
-              overfitting pada dataset dengan jumlah kejadian terbatas (115 kematian).
+              pada data ini — untuk menghindari overfitting pada 115 kejadian.
             </Bullet>
             <Bullet>
-              Nilai 500 pohon merujuk <strong>Breiman (2001)</strong>, yang menunjukkan bahwa galat
-              generalisasi Random Forest konvergen seiring bertambahnya jumlah pohon; penambahan di
-              atas beberapa ratus pohon memberi perbaikan yang dapat diabaikan.
+              500 pohon merujuk <strong>Breiman (2001)</strong>: galat generalisasi konvergen
+              seiring bertambahnya pohon, penambahan di atas beberapa ratus dapat diabaikan.
             </Bullet>
             <Bullet>
-              Kedalaman maksimum 6 dan minimal 5 sampel per daun merujuk{" "}
-              <strong>Probst dkk. (2019)</strong>, yang merekomendasikan pembatasan kompleksitas
-              pohon pada data medis dengan kelas tidak seimbang.
+              Kedalaman 6 dan minimal 5 sampel per daun merujuk <strong>Probst dkk. (2019)</strong>{" "}
+              untuk data medis dengan kelas tidak seimbang.
             </Bullet>
             <Bullet>
-              Pengulangan 10 seed mengurangi variabilitas akibat pembagian lipatan acak, sesuai
-              rekomendasi <strong>Molinaro dkk. (2005)</strong> tentang stabilitas estimasi validasi
-              silang pada ukuran sampel moderat.
+              Pengulangan 10 seed mengurangi variabilitas pembagian lipatan acak, sesuai{" "}
+              <strong>Molinaro dkk. (2005)</strong>.
             </Bullet>
             <Bullet tone="flag">
               Nested cross-validation tidak dilakukan karena tidak ada pencarian hiperparameter
-              berbasis data; konsekuensinya tetap dicatat sebagai keterbatasan.
+              berbasis data.
             </Bullet>
           </BulletList>
         </div>

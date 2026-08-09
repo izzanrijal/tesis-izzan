@@ -50,9 +50,8 @@ export function SShapBar() {
               Temuan utama
             </p>
             <p className="slide-caption" style={{ color: "var(--s-ink)", marginTop: 6 }}>
-              Tiga fitur teratas menurut SHAP — ureum, eGFR, dan LVOT VTI — konsisten dengan
-              peringkat Gini importance, sehingga interpretasi model tidak bergantung pada satu
-              metode saja.
+              Tiga fitur teratas — ureum, eGFR, LVOT VTI — konsisten dengan peringkat Gini,
+              sehingga interpretasi tidak bergantung satu metode.
             </p>
           </div>
         </div>

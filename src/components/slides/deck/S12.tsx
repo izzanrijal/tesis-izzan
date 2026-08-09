@@ -47,16 +47,13 @@ export function S12() {
                 fitur menambah atau mengurangi risiko.
               </Bullet>
               <Bullet>
-                Pada pasien ini kontribusi terbesar berasal dari <strong>eGFR dan ureum</strong>,
-                diikuti APTT dan parameter hemodinamik.
+                Kontribusi terbesar berasal dari <strong>eGFR dan ureum</strong>, diikuti APTT.
               </Bullet>
               <Bullet tone="jade">
-                Jumlah seluruh kontribusi tepat sama dengan selisih prediksi terhadap nilai dasar —
-                sifat aditif inilah keunggulan SHAP.
+                Jumlah kontribusi tepat sama dengan selisih prediksi terhadap nilai dasar.
               </Bullet>
               <Bullet tone="flag">
-                Kontribusi bersifat asosiatif, bukan kausal; tidak berarti mengubah satu variabel
-                akan menurunkan risiko sebesar itu.
+                Kontribusi bersifat asosiatif, bukan kausal.
               </Bullet>
             </BulletList>
           </Panel>

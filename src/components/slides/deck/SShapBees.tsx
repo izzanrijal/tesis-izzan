@@ -37,16 +37,14 @@ export function SShapBees() {
               nilai rendah.
             </Bullet>
             <Bullet>
-              Ureum tinggi (merah) konsisten menggeser prediksi ke kanan; eGFR tinggi (merah)
-              menggeser ke kiri — pola yang sesuai dengan patofisiologi sindrom kardiorenal.
+              Ureum tinggi menggeser prediksi ke kanan; eGFR tinggi ke kiri — sesuai patofisiologi
+              sindrom kardiorenal.
             </Bullet>
             <Bullet>
-              LVEF rendah menggeser prediksi ke arah risiko lebih tinggi, dengan sebaran lebar yang
-              menandakan efek interaksional.
+              LVEF rendah menggeser prediksi ke risiko lebih tinggi, dengan sebaran lebar.
             </Bullet>
             <Bullet tone="jade">
-              Konsistensi arah pengaruh dengan pengetahuan klinis memperkuat kepercayaan terhadap
-              model.
+              Arah pengaruh konsisten dengan pengetahuan klinis.
             </Bullet>
           </BulletList>
         </Panel>
