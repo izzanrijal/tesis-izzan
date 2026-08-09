@@ -58,13 +58,11 @@ export function SModel() {
             </div>
           ))}
 
-          <div style={{ background: "var(--s-panel)", padding: "14px 20px" }}>
-            <p className="slide-caption" style={{ color: "var(--s-forest)", fontWeight: 700 }}>
-              Protokol validasi
-            </p>
-            <p className="slide-caption" style={{ color: "var(--s-ink)", marginTop: 4 }}>
-              StratifiedKFold 5 lipatan × 10 seed acak; imputasi median dihitung ulang pada tiap
-              lipatan pelatihan untuk mencegah kebocoran data.
+          <div style={{ background: "var(--s-panel)", padding: "12px 20px" }}>
+            <p className="slide-caption" style={{ color: "var(--s-ink)" }}>
+              <strong style={{ color: "var(--s-forest)" }}>Protokol validasi:</strong>{" "}
+              StratifiedKFold 5 lipatan × 10 seed; imputasi median dihitung ulang tiap lipatan
+              pelatihan untuk mencegah kebocoran data.
             </p>
           </div>
         </div>
@@ -87,10 +85,6 @@ export function SModel() {
             <Bullet>
               Pengulangan 10 seed mengurangi variabilitas pembagian lipatan acak, sesuai{" "}
               <strong>Molinaro dkk. (2005)</strong>.
-            </Bullet>
-            <Bullet tone="flag">
-              Nested cross-validation tidak dilakukan karena tidak ada pencarian hiperparameter
-              berbasis data.
             </Bullet>
           </BulletList>
         </div>

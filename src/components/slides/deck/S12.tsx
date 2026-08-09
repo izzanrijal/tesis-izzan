@@ -52,9 +52,6 @@ export function S12() {
               <Bullet tone="jade">
                 Jumlah kontribusi tepat sama dengan selisih prediksi terhadap nilai dasar.
               </Bullet>
-              <Bullet tone="flag">
-                Kontribusi bersifat asosiatif, bukan kausal.
-              </Bullet>
             </BulletList>
           </Panel>
         </div>

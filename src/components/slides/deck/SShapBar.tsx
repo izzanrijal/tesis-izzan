@@ -31,8 +31,8 @@ export function SShapBar() {
           <Panel title="Metode" subtitle="TreeExplainer dan atribusi aditif">
             <BulletList>
               <Bullet>
-                SHAP (SHapley Additive exPlanations) menghitung kontribusi tiap fitur terhadap satu
-                prediksi berdasarkan <strong>teori permainan kooperatif</strong>.
+                SHAP menghitung kontribusi tiap fitur terhadap satu prediksi berdasarkan{" "}
+                <strong>teori permainan kooperatif</strong>.
               </Bullet>
               <Bullet>
                 Implementasi <strong>TreeExplainer</strong> menghitung nilai SHAP secara eksak dan

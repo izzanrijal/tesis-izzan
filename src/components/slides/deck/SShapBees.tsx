@@ -43,9 +43,6 @@ export function SShapBees() {
             <Bullet>
               LVEF rendah menggeser prediksi ke risiko lebih tinggi, dengan sebaran lebar.
             </Bullet>
-            <Bullet tone="jade">
-              Arah pengaruh konsisten dengan pengetahuan klinis.
-            </Bullet>
           </BulletList>
         </Panel>
       </div>
