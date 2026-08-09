@@ -49,9 +49,8 @@ export function SShapBar() {
             <p className="slide-caption" style={{ color: "var(--s-forest)", fontWeight: 700 }}>
               Temuan utama
             </p>
-            <p className="slide-caption" style={{ color: "var(--s-ink)", marginTop: 6 }}>
-              Tiga fitur teratas — ureum, eGFR, LVOT VTI — konsisten dengan peringkat Gini,
-              sehingga interpretasi tidak bergantung satu metode.
+            <p className="slide-caption" style={{ color: "var(--s-ink)", marginTop: 4 }}>
+              Tiga fitur teratas — ureum, eGFR, LVOT VTI — konsisten dengan peringkat Gini.
             </p>
           </div>
         </div>
