@@ -73,7 +73,7 @@ for (const items of slides) {
       // banyak baris: beri kelonggaran lebar 6%.
       const wNat = inch(Math.max(it.w, (it.natW ?? 0) + 6));
       const w = single
-        ? Math.min(13.333 - pos.x, Math.max(pos.w, wNat) + 0.08)
+        ? Math.min(13.333 - pos.x, Math.max(pos.w, Math.min(wNat, pos.w * 1.18)) + 0.06)
         : Math.min(13.333 - pos.x, pos.w * 1.06 + 0.05);
       s.addText(runs, {
         ...pos,
