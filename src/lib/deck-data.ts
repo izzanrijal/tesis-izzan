@@ -209,30 +209,47 @@ export const TABEL_32: [string, string, string, string][] = [
   ["TAPSE (cm)", "1,9 ± 0,3", "2,0 ± 0,2", "0,0112"],
 ];
 
-/** Matriks konfusi prediksi out-of-fold rerata 10 seed (Bagian 3.2.3). */
+/** Matriks konfusi prediksi out-of-fold pada seluruh 1.524 pasien. */
 export const CONFUSION = {
   safety: {
     threshold: "0,018455",
-    tp: 108,
-    fn: 7,
-    tn: 572,
-    fp: 837,
-    sens: "93,9%",
-    spec: "40,6%",
-    ppv: "11,4%",
-    npv: "98,8%",
-    flagged: 945,
+    tp: 113,
+    fn: 2,
+    tn: 369,
+    fp: 1040,
+    sens: "98,3%",
+    spec: "26,2%",
+    ppv: "9,8%",
+    npv: "99,5%",
+    flagged: 1153,
   },
   youden: {
     threshold: "0,103981",
-    tp: 89,
-    fn: 26,
-    tn: 1058,
-    fp: 351,
-    sens: "77,4%",
-    spec: "75,1%",
-    ppv: "20,2%",
-    npv: "97,6%",
-    flagged: 440,
+    tp: 82,
+    fn: 33,
+    tn: 1155,
+    fp: 254,
+    sens: "71,3%",
+    spec: "82,0%",
+    ppv: "24,4%",
+    npv: "97,2%",
+    flagged: 336,
   },
 };
+
+/** Tabel 3.4 — AUC out-of-fold pada setiap jumlah parameter (k). */
+export const K_TABLE: [string, string, string, string][] = [
+  ["1", "eGFR", "0,649 ± 0,011", "0,635–0,668"],
+  ["2", "Ureum", "0,710 ± 0,006", "0,700–0,718"],
+  ["3", "LVOT VTI", "0,755 ± 0,006", "0,747–0,769"],
+  ["4", "Hemoglobin", "0,766 ± 0,004", "0,757–0,771"],
+  ["5", "Kalium", "0,786 ± 0,006", "0,778–0,794"],
+  ["6", "APTT", "0,795 ± 0,005", "0,788–0,804"],
+  ["7", "Usia", "0,808 ± 0,004", "0,800–0,813"],
+  ["8", "LVEF", "0,809 ± 0,005", "0,800–0,816"],
+  ["9", "Tekanan darah sistolik", "0,807 ± 0,006", "0,800–0,817"],
+  ["10", "Laju jantung", "0,812 ± 0,008", "0,801–0,822"],
+  ["11", "Laju napas", "0,815 ± 0,008", "0,802–0,826"],
+  ["12", "Kelas Killip", "0,816 ± 0,006", "0,807–0,823"],
+  ["13", "TAPSE", "0,815 ± 0,007", "0,804–0,824"],
+];
