@@ -35,12 +35,12 @@ export function SShapBar() {
                 <strong>teori permainan kooperatif</strong>.
               </Bullet>
               <Bullet>
-                Implementasi <strong>TreeExplainer</strong> menghitung nilai SHAP secara eksak dan
-                efisien untuk model berbasis pohon seperti Random Forest.
+                <strong>TreeExplainer</strong> menghitung nilai SHAP secara eksak untuk model
+                berbasis pohon.
               </Bullet>
               <Bullet>
-                Sifat <strong>additive feature attribution</strong>: jumlah nilai SHAP seluruh fitur
-                sama dengan selisih prediksi terhadap nilai dasar.
+                <strong>Additive feature attribution</strong>: jumlah nilai SHAP sama dengan selisih
+                prediksi terhadap nilai dasar.
               </Bullet>
             </BulletList>
           </Panel>

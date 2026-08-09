@@ -43,8 +43,8 @@ export function S12() {
           <Panel title="Cara membaca" subtitle="Dari nilai dasar menuju prediksi akhir">
             <BulletList>
               <Bullet>
-                Prediksi dimulai dari <strong>nilai dasar</strong> (rerata risiko kohort), lalu tiap
-                fitur menambah atau mengurangi risiko.
+                Prediksi dimulai dari <strong>nilai dasar</strong>, lalu tiap fitur menambah atau
+                mengurangi risiko.
               </Bullet>
               <Bullet>
                 Kontribusi terbesar berasal dari <strong>eGFR dan ureum</strong>, diikuti APTT.
