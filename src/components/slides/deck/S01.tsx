@@ -144,7 +144,7 @@ export function S01() {
             BARU KEPUTUSAN KLINIS
           </p>
           <span className="slide-num" style={{ color: "#7fae97", fontSize: 20 }}>
-            01 / 34
+            01 / {TOTAL_SLIDES}
           </span>
         </div>
       </div>
