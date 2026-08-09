@@ -40,6 +40,10 @@ export const FIGS = {
   prob: figProb.url,
   importance: figImportance.url,
   ablation: figAblation.url,
+  featureCount: figFeatureCount.url,
+  shapBar: figShapBar.url,
+  shapBees: figShapBees.url,
+  shapWaterfall: figShapWaterfall.url,
   triage: figTriage.url,
   roc3: figRoc3.url,
   rocGrace: figRocGrace.url,
@@ -66,7 +70,7 @@ export const DECK_TITLE =
   "Random Forest untuk Prediksi Mortalitas In-Hospital pada Pasien STEMI dan NSTEMI di IGD";
 
 /* Diisi oleh registry agar penomoran footer selalu sinkron. */
-export const TOTAL_SLIDES = 35;
+export const TOTAL_SLIDES = 39;
 
 /* ------------------------------------------------------------------
    Rekonstruksi kurva dari metrik terlapor (model binormal).
