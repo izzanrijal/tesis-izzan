@@ -94,7 +94,7 @@ export function SConfusion() {
       band={BANDS.ed}
       title="Matriks konfusi: harga sensitivitas tinggi terbayar oleh positif palsu"
       metaTitle="Analisis matriks konfusi pada dua ambang"
-      basis="Basis: prediksi out-of-fold rerata ensemble 10 seed pada seluruh 1.524 pasien (Bagian 3.2.3)"
+      basis="Basis: prediksi out-of-fold pada seluruh 1.524 pasien (115 kematian), Bagian 3.2.3"
       source="Gambar 3.4 dan Gambar 3.5 — Matriks konfusi ambang safety dan Youden"
       callout={
         <Callout label="Kompromi:">
