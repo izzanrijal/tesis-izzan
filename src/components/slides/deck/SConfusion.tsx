@@ -80,7 +80,8 @@ function Matrix({ title, subtitle, cm }: { title: string; subtitle: string; cm: 
       </div>
 
       <p className="slide-caption" style={{ color: "var(--s-slate)", marginTop: 12 }}>
-        Total pasien ditandai berisiko tinggi: <strong>{cm.flagged}</strong> dari 1.524.
+        Negatif palsu: <strong>{cm.fn}</strong> dari 115 kematian · N = 1.524 · total pasien
+        ditandai berisiko tinggi: <strong>{cm.flagged.toLocaleString("id-ID")}</strong>.
       </p>
     </div>
   );
@@ -97,9 +98,9 @@ export function SConfusion() {
       source="Gambar 3.4 dan Gambar 3.5 — Matriks konfusi ambang safety dan Youden"
       callout={
         <Callout label="Kompromi:">
-          Ambang safety menurunkan negatif palsu dari 26 menjadi <strong>7</strong>, tetapi
-          menaikkan positif palsu dari 351 menjadi <strong>837</strong> — jumlah pasien yang
-          ditandai naik dari 440 ke 945.
+          Ambang safety menurunkan negatif palsu dari 33 menjadi <strong>2</strong>, tetapi
+          menaikkan positif palsu dari 254 menjadi <strong>1.040</strong> — jumlah pasien yang
+          ditandai naik dari 336 ke 1.153.
         </Callout>
       }
     >
