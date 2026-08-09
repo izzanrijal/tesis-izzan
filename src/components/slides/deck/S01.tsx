@@ -1,3 +1,5 @@
+import { TOTAL_SLIDES } from "@/lib/deck-data";
+
 const PEMBIMBING = [
   "Prof. Dr. dr. Idar Mappangara, Sp.PD, Sp.JP(K)",
   "Prof. Dr. dr. Muzakkir Amir, Sp.JP(K)",
