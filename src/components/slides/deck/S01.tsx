@@ -101,51 +101,75 @@ export function S01() {
         </div>
       </div>
 
-      {/* Kolom kanan — panel mint */}
-      <div className="relative flex flex-col" style={{ width: 560, background: "var(--s-mint)" }}>
-        <div className="flex flex-1 flex-col justify-center" style={{ padding: "0 54px" }}>
-          <p className="slide-kicker" style={{ color: "var(--s-emerald)" }}>
-            Area di bawah kurva ROC
-          </p>
+      {/* Kolom kanan — panel identitas, tanpa angka hasil */}
+      <div
+        className="relative flex flex-col overflow-hidden"
+        style={{ width: 560, background: "var(--s-forest)" }}
+      >
+        {/* Motif garis diagonal halus */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(135deg, color-mix(in oklab, #ffffff 7%, transparent) 0 2px, transparent 2px 26px)",
+          }}
+        />
+
+        <div className="relative flex flex-1 flex-col justify-center" style={{ padding: "0 54px" }}>
+          <div style={{ width: 96, height: 10, background: "var(--s-lime)" }} />
           <p
-            className="slide-num"
             style={{
-              color: "var(--s-forest)",
-              fontSize: 132,
-              lineHeight: 1.05,
-              letterSpacing: "-0.04em",
-              marginTop: 20,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
+              fontSize: 58,
+              lineHeight: 1.06,
+              letterSpacing: "-0.03em",
+              color: "#ffffff",
+              marginTop: 26,
             }}
           >
-            0,819
+            SIDANG
+            <br />
+            HASIL
+            <br />
+            TESIS
+          </p>
+          <p
+            className="slide-body"
+            style={{ color: "#a9c9ba", marginTop: 24, lineHeight: 1.55 }}
+          >
+            Program Pendidikan Dokter Spesialis
+            <br />
+            Ilmu Penyakit Jantung dan Pembuluh Darah
           </p>
 
-          <p className="slide-subtitle" style={{ color: "var(--s-forest)", fontSize: 34, marginTop: 26 }}>
-            Diskriminasi baik untuk mortalitas in-hospital
-          </p>
-          <p className="slide-body" style={{ color: "var(--s-emerald)", marginTop: 16 }}>
-            Brier 0,061 · AUPRC 0,301 · 5-fold × 10 seed
-          </p>
-          <div style={{ height: 1, background: "#b9d6b4", margin: "26px 0" }} />
-          <p style={{ fontSize: 21, lineHeight: 1.6, color: "var(--s-emerald)" }}>
-            1.524 pasien · 13 prediktor
+          <div style={{ height: 1, background: "#2f5e46", margin: "30px 0" }} />
+
+          <p style={{ fontSize: 20, lineHeight: 1.6, color: "#8fb7a2", letterSpacing: "0.04em" }}>
+            Universitas Hasanuddin
             <br />
-            115 kematian in-hospital (7,5%)
+            PJT RSUP Dr. Wahidin Sudirohusodo
             <br />
-            Januari 2024 — Desember 2025
+            Makassar · 2026
           </p>
         </div>
 
         <div
-          className="flex shrink-0 items-center justify-between"
-          style={{ background: "var(--s-forest)", padding: "30px 54px", height: 150 }}
+          className="relative flex shrink-0 items-center justify-between"
+          style={{ background: "var(--s-lime)", padding: "0 54px", height: 96 }}
         >
-          <p style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: "#ffffff", fontSize: 27, lineHeight: 1.25 }}>
-            BUKTI DULU,
-            <br />
-            BARU KEPUTUSAN KLINIS
+          <p
+            style={{
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
+              color: "var(--s-forest)",
+              fontSize: 22,
+              letterSpacing: "0.06em",
+            }}
+          >
+            BUKTI DULU, BARU KEPUTUSAN
           </p>
-          <span className="slide-num" style={{ color: "#7fae97", fontSize: 20 }}>
+          <span className="slide-num" style={{ color: "var(--s-forest)", fontSize: 20 }}>
             01 / {TOTAL_SLIDES}
           </span>
         </div>
