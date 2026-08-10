@@ -30,6 +30,14 @@ import { S18 } from "./deck/S18";
 import { S19 } from "./deck/S19";
 import { S20 } from "./deck/S20";
 import { S21 } from "./deck/S21";
+import { SRumusanTujuan } from "./deck/SRumusanTujuan";
+import { SManfaat } from "./deck/SManfaat";
+import { SMetode1 } from "./deck/SMetode1";
+import { SMetode2 } from "./deck/SMetode2";
+import { SMetode3 } from "./deck/SMetode3";
+import { SMetode4 } from "./deck/SMetode4";
+import { SMetode5 } from "./deck/SMetode5";
+import { SMetode6 } from "./deck/SMetode6";
 
 export type SlideEntry = { title: string; Component: ComponentType };
 
@@ -38,8 +46,16 @@ export const SLIDES: SlideEntry[] = [
   { title: "Pembunuh senyap di IGD", Component: S02 },
   { title: "Keterbatasan GRACE & TIMI", Component: S03 },
   { title: "Machine learning: paradigma baru", Component: S04 },
+  { title: "Rumusan masalah & tujuan", Component: SRumusanTujuan },
+  { title: "Manfaat penelitian", Component: SManfaat },
   { title: "Kerangka teori", Component: SKerangkaTeori },
   { title: "Kerangka konsep", Component: SKerangkaKonsep },
+  { title: "Desain, tempat & sampel", Component: SMetode1 },
+  { title: "Kriteria inklusi & eksklusi", Component: SMetode2 },
+  { title: "Variabel penelitian", Component: SMetode3 },
+  { title: "Definisi operasional", Component: SMetode4 },
+  { title: "Prosedur & etika penelitian", Component: SMetode5 },
+  { title: "Metode analisis data", Component: SMetode6 },
   { title: "Desain studi & alur STROBE", Component: S05 },
   { title: "13 prediktor", Component: S06 },
   { title: "Pengembangan model & protokol validasi", Component: SModel },
