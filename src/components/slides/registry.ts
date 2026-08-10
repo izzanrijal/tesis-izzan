@@ -30,6 +30,14 @@ import { S18 } from "./deck/S18";
 import { S19 } from "./deck/S19";
 import { S20 } from "./deck/S20";
 import { S21 } from "./deck/S21";
+import { SRumusanTujuan } from "./deck/SRumusanTujuan";
+import { SManfaat } from "./deck/SManfaat";
+import { SMetode1 } from "./deck/SMetode1";
+import { SMetode2 } from "./deck/SMetode2";
+import { SMetode3 } from "./deck/SMetode3";
+import { SMetode4 } from "./deck/SMetode4";
+import { SMetode5 } from "./deck/SMetode5";
+import { SMetode6 } from "./deck/SMetode6";
 
 export type SlideEntry = { title: string; Component: ComponentType };
 
