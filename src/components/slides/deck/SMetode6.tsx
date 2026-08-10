@@ -40,8 +40,9 @@ export function SMetode6() {
           <Panel title="Analisis pemodelan" tone="mint">
             <BulletList>
               <Bullet>Random Forest sebagai model utama, XGBoost sebagai pembanding.</Bullet>
-              <Bullet>Validasi silang berulang 5-fold dengan 10 seed, imputasi median per fold.</Bullet>
-              <Bullet>Evaluasi diskriminasi (AUC), kalibrasi (Brier), dan interpretasi SHAP.</Bullet>
+              <Bullet>
+                Validasi silang 5-fold × 10 seed; evaluasi AUC, Brier, dan interpretasi SHAP.
+              </Bullet>
             </BulletList>
           </Panel>
 
