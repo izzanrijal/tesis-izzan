@@ -20,7 +20,7 @@ export function SMetode6() {
         </Callout>
       }
     >
-      <div className="grid h-full min-h-0" style={{ gridTemplateColumns: "1.1fr 0.9fr", gap: 36 }}>
+      <div className="grid h-full min-h-0 items-start" style={{ gridTemplateColumns: "1.1fr 0.9fr", gap: 36 }}>
         <Panel title="Uji statistik" tone="panel">
           <BulletList>
             <Bullet>
