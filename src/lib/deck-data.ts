@@ -70,7 +70,7 @@ export const DECK_TITLE =
   "Random Forest untuk Prediksi Mortalitas In-Hospital pada Pasien STEMI dan NSTEMI di IGD";
 
 /* Diisi oleh registry agar penomoran footer selalu sinkron. */
-export const TOTAL_SLIDES = 47;
+export const TOTAL_SLIDES = 50;
 
 /* ------------------------------------------------------------------
    Rekonstruksi kurva dari metrik terlapor (model binormal).
@@ -252,4 +252,149 @@ export const K_TABLE: [string, string, string, string][] = [
   ["11", "Laju napas", "0,815 ± 0,008", "0,802–0,826"],
   ["12", "Kelas Killip", "0,816 ± 0,006", "0,807–0,823"],
   ["13", "TAPSE", "0,815 ± 0,007", "0,804–0,824"],
+];
+
+/* ------------------------------------------------------------------
+   Tabel 2.1 — Definisi operasional dan kriteria objektif (lengkap,
+   sesuai naskah tesis BAB II halaman 10–12).
+   Format baris: [variabel, definisi, skala, kriteria objektif/pengodean]
+   Baris dengan definisi "" adalah judul kelompok.
+   ------------------------------------------------------------------ */
+export type DefOpRow = [string, string, string, string];
+
+export const DEFOP_A: DefOpRow[] = [
+  ["Variabel dependen", "", "", ""],
+  [
+    "Mortalitas in-hospital",
+    "Kematian selama episode perawatan rumah sakit yang sama setelah admisi dengan STEMI atau NSTEMI",
+    "Biner",
+    "Meninggal = 1; hidup saat pulang = 0, berdasarkan status keluar rumah sakit",
+  ],
+  [
+    "Syok kardiogenik de novo",
+    "Syok kardiogenik baru yang terjadi setelah admisi rawat inap: SBP < 90 mmHg atau kebutuhan vasopresor untuk mempertahankan tekanan darah, disertai tanda hipoperfusi organ, yang tidak ada saat admisi IGD",
+    "Biner",
+    "Ya = 1 jika cardiogenic_shock = 1; Tidak = 0",
+  ],
+  [
+    "Komposit (mortalitas dan/atau syok kardiogenik)",
+    "Luaran gabungan berupa kematian in-hospital dan/atau syok kardiogenik de novo selama periode perawatan indeks",
+    "Biner",
+    "Ya = 1 jika inhospital_death = 1 atau cardiogenic_shock = 1; Tidak = 0 jika hidup tanpa syok kardiogenik saat pulang",
+  ],
+  ["A. Karakteristik demografis", "", "", ""],
+  ["Usia", "Usia pasien (tahun penuh) pada hari admisi", "Kontinu", "Nilai numerik tahun, dari tanggal lahir di RME"],
+  ["Jenis kelamin", "Jenis kelamin biologis pasien", "Biner", "Laki-laki = 1; Perempuan = 0"],
+  ["B. Parameter klinis", "", "", ""],
+  [
+    "Tekanan darah sistolik (SBP)",
+    "Tekanan darah sistolik saat admisi, nilai terendah (minimum) dalam 0–24 jam",
+    "Kontinu",
+    "mmHg, nilai numerik",
+  ],
+  [
+    "Tekanan darah diastolik (DBP)",
+    "Tekanan darah diastolik saat admisi, nilai terendah (minimum) dalam 0–24 jam",
+    "Kontinu",
+    "mmHg, nilai numerik",
+  ],
+  [
+    "Denyut nadi (heart rate)",
+    "Denyut nadi saat admisi, nilai tertinggi (maksimum) dalam 0–24 jam",
+    "Kontinu",
+    "x/menit, nilai numerik",
+  ],
+  [
+    "Kebutuhan oksigen",
+    "Kebutuhan oksigen ≥ simple mask secara kontinu dalam 24 jam pertama",
+    "Biner",
+    "Ya = 1 jika minimal nasal kanul > 5 L/menit, atau simple mask (Venturi/NRBM/HFNC/NIV/ETT) tanpa kembali ke room air; Tidak = 0",
+  ],
+];
+
+export const DEFOP_LAB: DefOpRow[] = [
+  ["Hemoglobin (Hb)", "Kadar hemoglobin darah, nilai pada 0–24 jam pertama", "Kontinu", "g/dL, nilai numerik"],
+  ["Leukosit (WBC)", "Jumlah sel darah putih, nilai pada 0–24 jam pertama", "Kontinu", "sel/μL, nilai numerik"],
+  ["Trombosit (PLT)", "Jumlah trombosit, nilai pada 0–24 jam pertama", "Kontinu", "×10⁶/L, nilai numerik"],
+  ["GOT (AST)", "Kadar aspartat aminotransferase, nilai pada 0–24 jam pertama", "Kontinu", "U/L, nilai numerik"],
+  ["GPT (ALT)", "Kadar alanin aminotransferase, nilai pada 0–24 jam pertama", "Kontinu", "U/L, nilai numerik"],
+  ["Ureum", "Kadar ureum darah, nilai pada 0–24 jam pertama", "Kontinu", "mg/dL, nilai numerik"],
+  ["Kreatinin", "Kadar kreatinin serum, nilai pada 0–24 jam pertama", "Kontinu", "mg/dL, nilai numerik"],
+  [
+    "eGFR",
+    "Laju filtrasi glomerulus estimasi (CKD-EPI 2021)",
+    "Kontinu",
+    "mL/menit/1,73 m²; eGFR = 142 × [min(Scr/κ,1)]^α × [max(Scr/κ,1)]^−1,200 × 0,9938^Usia × 1,012 [jika perempuan]",
+  ],
+  ["Natrium", "Kadar natrium serum, nilai pada 0–24 jam pertama", "Kontinu", "mmol/L, nilai numerik"],
+  ["Kalium", "Kadar kalium serum, nilai pada 0–24 jam pertama", "Kontinu", "mmol/L, nilai numerik"],
+  ["Gula darah sewaktu (GDS)", "Kadar glukosa darah, nilai tertinggi (maksimum) dalam 0–24 jam", "Kontinu", "mg/dL, nilai numerik"],
+  [
+    "NLR (neutrophil-to-lymphocyte ratio)",
+    "Rasio neutrofil terhadap limfosit dari darah tepi, nilai pada 0–24 jam pertama",
+    "Kontinu",
+    "NLR = hitung jenis neutrofil absolut / hitung jenis limfosit absolut",
+  ],
+  [
+    "SII (systemic immune-inflammation index)",
+    "Indeks imun-inflamasi sistemik, dihitung dari nilai laboratorium 0–24 jam pertama",
+    "Kontinu",
+    "SII = (neutrofil absolut × trombosit absolut) / limfosit absolut",
+  ],
+  [
+    "APTT (activated partial thromboplastin time)",
+    "Waktu tromboplastin parsial teraktivasi, nilai pada 0–24 jam pertama",
+    "Kontinu",
+    "detik, nilai numerik",
+  ],
+];
+
+export const DEFOP_C: DefOpRow[] = [
+  ["E. Parameter ekokardiografi", "", "", ""],
+  ["LVEF", "Fraksi ejeksi ventrikel kiri (metode biplane Simpson)", "Kontinu", "%; LVEF = [(LVEDV − LVESV) / LVEDV] × 100%"],
+  ["TAPSE", "Tricuspid annular plane systolic excursion", "Kontinu", "mm, nilai numerik"],
+  [
+    "LVOT VTI (velocity time integral)",
+    "Velocity time integral dari left ventricular outflow tract, pulsed-wave Doppler apikal 5-ruang",
+    "Kontinu",
+    "cm, nilai numerik",
+  ],
+  ["F. Variabel perancu", "", "", ""],
+  ["Revaskularisasi koroner", "Menjalani PCI atau CABG sebelum SKG", "Biner", "Ya = 1; Tidak = 0. Berdasarkan kode prosedur billing/rekam operasi"],
+  ["Indeks massa tubuh (IMT)", "Berat badan (kg) / tinggi badan² (m²), ukur pertama ≤ 24 jam", "Kontinu", "kg/m², nilai numerik"],
+  [
+    "Riwayat hipertensi",
+    "Diagnosis hipertensi atau obat antihipertensi sebelum admisi",
+    "Biner",
+    "Ya = 1 jika tercatat di problem list atau obat antihipertensi kronik",
+  ],
+  ["Riwayat diabetes melitus", "Diagnosis DM atau obat hipoglikemik/insulin sebelum admisi", "Biner", "Ya = 1; Tidak = 0"],
+  ["Riwayat merokok", "Perokok aktif (≥ 1 batang/30 hari) atau mantan perokok", "Biner", "Ya = 1; Tidak = 0"],
+  ["Riwayat SKA sebelumnya", "Riwayat STEMI/NSTEMI terdokumentasi sebelum admisi", "Biner", "Ya = 1; Tidak = 0"],
+  [
+    "Pengobatan kardiovaskular",
+    "Penggunaan rutin minimal satu obat kardiovaskular sebelum admisi",
+    "Biner",
+    "Ya = 1 jika pada wawancara ≤ 24 jam dilaporkan menggunakan furosemid, digoksin, beta-blocker, MRA/ARNI, ACE-I/ARB, nitrat, statin, atau antiplatelet",
+  ],
+];
+
+/** 2.6.2 Kriteria objektif diagnosis — teks lengkap naskah. */
+export const KRITERIA_DIAGNOSIS: [string, string][] = [
+  [
+    "STEMI",
+    "Diagnosis ditegakkan berdasarkan kriteria EKG berupa elevasi segmen ST baru pada titik J di ≥ 2 sadapan berdekatan dengan ambang batas: ≥ 2,5 mm pada pria < 40 tahun, ≥ 2 mm pada pria ≥ 40 tahun, atau ≥ 1,5 mm pada wanita di sadapan V2–V3, dan/atau ≥ 1 mm di sadapan lainnya (Thygesen et al., 2018; Byrne et al., 2023).",
+  ],
+  [
+    "NSTEMI",
+    "Ditegakkan jika terdapat setidaknya satu nilai troponin di atas persentil ke-99 batas atas referensi (upper reference limit) disertai bukti iskemia berupa gejala iskemik, perubahan EKG non-persisten, atau LBBB baru (Thygesen et al., 2018; Collet et al., 2021).",
+  ],
+  [
+    "Sindrom koroner akut (SKA)",
+    "SKA secara spesifik mencakup STEMI dan NSTEMI. Angina pektoris tidak stabil (APTS) tidak termasuk dalam cakupan diagnosis pada penelitian ini untuk meminimalkan potensi bias diagnosis yang subjektif dan memastikan fokus pada populasi infark miokard akut yang terdefinisi objektif.",
+  ],
+  [
+    "Syok kardiogenik (SKG)",
+    "Ditegakkan jika pasien memenuhi seluruh kriteria berikut selama periode perawatan yang sama: (1) hipotensi persisten yang membutuhkan intervensi farmakologis, dibuktikan dengan catatan pemberian vasopresor atau inotropik untuk mempertahankan tekanan darah sistolik ≥ 90 mmHg; dan (2) disertai minimal satu bukti hipoperfusi organ akhir yang tercatat dalam rekam medis, yaitu perubahan status mental, akral dingin, oliguria (produksi urin < 0,5 mL/kg/jam selama ≥ 6 jam), atau peningkatan laktat serum > 2 mmol/L (Baran et al., 2019; Chioncel et al., 2020).",
+  ],
 ];
