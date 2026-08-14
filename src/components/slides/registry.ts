@@ -35,7 +35,7 @@ import { SManfaat } from "./deck/SManfaat";
 import { SMetode1 } from "./deck/SMetode1";
 import { SMetode2 } from "./deck/SMetode2";
 import { SMetode3 } from "./deck/SMetode3";
-import { SMetode4 } from "./deck/SMetode4";
+import { SMetode4, SMetode4b, SMetode4c, SMetode4d } from "./deck/SMetode4";
 import { SMetode5 } from "./deck/SMetode5";
 import { SMetode6 } from "./deck/SMetode6";
 
@@ -53,7 +53,10 @@ export const SLIDES: SlideEntry[] = [
   { title: "Desain, tempat & sampel", Component: SMetode1 },
   { title: "Kriteria inklusi & eksklusi", Component: SMetode2 },
   { title: "Variabel penelitian", Component: SMetode3 },
-  { title: "Definisi operasional", Component: SMetode4 },
+  { title: "Definisi operasional (1/3)", Component: SMetode4 },
+  { title: "Definisi operasional (2/3) — laboratorium", Component: SMetode4b },
+  { title: "Definisi operasional (3/3) — eko & perancu", Component: SMetode4c },
+  { title: "Kriteria objektif diagnosis", Component: SMetode4d },
   { title: "Prosedur & etika penelitian", Component: SMetode5 },
   { title: "Metode analisis data", Component: SMetode6 },
   { title: "Desain studi & alur STROBE", Component: S05 },
