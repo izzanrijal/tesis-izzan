@@ -80,13 +80,21 @@ JS = r"""
       return runs.filter((r) => r.text.length);
     };
 
-    const measure = (el) => {
+    const measure = (el, lhPx) => {
       const range = document.createRange();
       range.selectNodeContents(el);
       const rects = [...range.getClientRects()].filter((r) => r.width > 0.5);
-      const lines = new Set(rects.map((r) => Math.round(r.top))).size || 1;
-      const natW = rects.length ? Math.max(...rects.map((r) => r.width)) : 0;
+      // kelompokkan baris dengan toleransi (run beda ukuran font punya top beda tipis)
+      const tops = [];
+      rects.forEach((r) => {
+        if (!tops.some((t) => Math.abs(t - r.top) < Math.max(6, lhPx * 0.6))) tops.push(r.top);
+      });
+      const lines = Math.max(1, tops.length);
+      const natW = lines === 1
+        ? rects.reduce((a, r) => a + r.width, 0)
+        : rects.length ? Math.max(...rects.map((r) => r.width)) : 0;
       return { lines, natW };
+
     };
 
     const visit = (el) => {
