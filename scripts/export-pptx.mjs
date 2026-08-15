@@ -84,6 +84,7 @@ function addTable(s, it) {
     row.map((c) => ({
       text: c.text,
       options: {
+        colspan: c.span && c.span > 1 ? c.span : undefined,
         bold: c.bold || c.header,
         fontSize: pt(c.size) * scale,
         fontFace: "IBM Plex Sans",

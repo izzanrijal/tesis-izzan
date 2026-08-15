@@ -123,6 +123,7 @@ JS = r"""
               fill: fill ? fill.hex : null,
               header: td.tagName === "TH",
               w: td.getBoundingClientRect().width,
+              span: td.colSpan || 1,
             };
           }),
         );
