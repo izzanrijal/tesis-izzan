@@ -157,9 +157,10 @@ JS = r"""
       if (isTextBlock(el)) {
         const runs = runsOf(el);
         if (runs.length) {
-          const m = measure(el);
           const lh = parseFloat(cs.lineHeight);
           const fs = parseFloat(cs.fontSize);
+          const m = measure(el, Number.isFinite(lh) ? lh : fs * 1.2);
+
           items.push({
             type: "text", ...box, runs,
             align: cs.textAlign, letter: parseFloat(cs.letterSpacing) || 0,
