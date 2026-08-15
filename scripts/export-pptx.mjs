@@ -90,7 +90,11 @@ function addTable(s, it) {
         color: c.header ? "0E4632" : c.color,
         align: c.align === "center" ? "center" : c.align === "right" ? "right" : "left",
         valign: "middle",
-        fill: c.header ? { color: "E6F2E3" } : c.fill ? { color: c.fill } : undefined,
+        fill: {
+          color: c.header
+            ? "E6F2E3"
+            : c.fill || row.find((q) => q.fill)?.fill || "FFFFFF",
+        },
         margin: [1, 2, 1, 2],
         border: [
           { type: "none" },
