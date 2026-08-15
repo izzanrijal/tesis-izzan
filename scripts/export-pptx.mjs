@@ -156,18 +156,21 @@ for (const items of slides) {
     } else if (it.type === "table") {
       addTable(s, it);
     } else if (it.type === "text") {
+      const hasBr0 = it.runs.some((r) => r.br);
+      // banyak baris: metrik font PowerPoint sedikit lebih lebar, kecilkan 4%
+      const shrink = (it.lines ?? 1) <= 1 && !hasBr0 ? 1 : 0.96;
       const runs = it.runs.map((r) => ({
         text: r.text,
         options: {
           bold: !!r.bold,
           italic: !!r.italic,
           color: r.color,
-          fontSize: pt(r.size),
+          fontSize: Math.max(6, pt(r.size) * shrink),
           fontFace: faceOf(r.face),
           breakLine: !!r.br,
         },
       }));
-      const maxSize = Math.max(...it.runs.map((r) => pt(r.size)));
+      const maxSize = Math.max(...it.runs.map((r) => pt(r.size) * shrink));
       const hasBr = it.runs.some((r) => r.br);
       const single = (it.lines ?? 1) <= 1 && !hasBr;
 
@@ -177,7 +180,7 @@ for (const items of slides) {
         w = Math.max(pos.w, inch(it.natW ?? 0)) + 0.22;
         if (x + w > SLIDE_W) x = Math.max(0, SLIDE_W - w);
       } else {
-        w = Math.min(SLIDE_W - x, pos.w * 1.03 + 0.03);
+        w = Math.min(SLIDE_W - x, pos.w * 1.04 + 0.04);
       }
       if (it.align === "right") x = Math.max(0, pos.x + pos.w - w);
       else if (it.align === "center") x = Math.max(0, pos.x + pos.w / 2 - w / 2);
