@@ -24,16 +24,21 @@ async function imgData(src) {
   const url = src.startsWith("http") ? src : `http://localhost:8080${src}`;
   const res = await fetch(url);
   if (!res.ok) throw new Error(`gagal ambil ${url}: ${res.status}`);
-  const buf = Buffer.from(await res.arrayBuffer());
-  const mime = /\.png/i.test(url)
-    ? "image/png"
-    : /\.svg/i.test(url)
-      ? "image/svg+xml"
-      : "image/jpeg";
+  let buf = Buffer.from(await res.arrayBuffer());
+  let mime = /\.png/i.test(url) ? "image/png" : "image/jpeg";
+  if (/\.svg/i.test(url)) {
+    // SVG dirasterisasi agar aman dibuka di PowerPoint/WPS
+    const tmp = `/tmp/svg-${Math.random().toString(36).slice(2)}`;
+    writeFileSync(`${tmp}.svg`, buf);
+    execFileSync("rsvg-convert", ["-w", "2400", `${tmp}.svg`, "-o", `${tmp}.png`]);
+    buf = readFileSync(`${tmp}.png`);
+    mime = "image/png";
+  }
   const data = `${mime};base64,${buf.toString("base64")}`;
   cache.set(src, data);
   return data;
 }
+
 
 const pptx = new PptxGenJS();
 pptx.defineLayout({ name: "L16x9", width: SLIDE_W, height: SLIDE_H });
