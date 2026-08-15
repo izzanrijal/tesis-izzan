@@ -47,6 +47,20 @@ for (const name of names) {
   zip.file(name, xml);
 }
 
+// 7. urutan elemen presentation.xml (notesMasterIdLst harus sebelum sldIdLst)
+{
+  const pn = "ppt/presentation.xml";
+  if (zip.file(pn)) {
+    let px = await zip.file(pn).async("string");
+    const nm = px.match(/<p:notesMasterIdLst>.*?<\/p:notesMasterIdLst>/s);
+    if (nm && px.indexOf(nm[0]) > px.indexOf("<p:sldIdLst>")) {
+      px = px.replace(nm[0], "").replace("<p:sldIdLst>", nm[0] + "<p:sldIdLst>");
+      zip.file(pn, px);
+      console.log("urutan presentation.xml diperbaiki");
+    }
+  }
+}
+
 const buf = await zip.generateAsync({ type: "nodebuffer", compression: "DEFLATE" });
 writeFileSync(FILE, buf);
 console.log(`postfix selesai: ${names.length} slide, ${fixes} berkas diperbaiki`);
