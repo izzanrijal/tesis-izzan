@@ -1,6 +1,8 @@
 // Membangun PPTX editable dari data DOM (scripts/dom-dump.py).
 // Semua teks jadi textbox native, semua <table> jadi tabel native.
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, writeFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+
 import PptxGenJS from "pptxgenjs";
 
 const DIR = process.argv[3] ?? "/tmp/browser/deck/native";
