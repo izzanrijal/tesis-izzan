@@ -22,6 +22,11 @@ const TAKEAWAYS = [
     head: "Unggul atas GRACE 2.0 dan XGBoost",
     body: "0,819 vs 0,777 (GRACE 2.0) dan 0,816 vs 0,789 (XGBoost) pada kohort yang sama — nilai tambah metode ensambel pohon.",
   },
+  {
+    n: "05",
+    head: "Mortalitas paling mudah diprediksi",
+    body: "AUC mortalitas 0,819 di atas komposit 0,769 dan syok kardiogenik baru 0,747 — luaran sekunder bersifat eksploratif dan tidak mengubah fokus utama.",
+  },
 ];
 
 export function S20() {
@@ -30,7 +35,7 @@ export function S20() {
       index={20}
       section="Penutup"
       band={BANDS.echo}
-      title="Kesimpulan: empat temuan utama"
+      title="Kesimpulan: lima temuan utama"
       metaTitle="Kesimpulan penelitian"
       basis="Basis: seluruh angka berasal dari analisis kohort 1.524 pasien, validasi internal"
       source="Bab 5.1 — Kesimpulan"
@@ -44,7 +49,7 @@ export function S20() {
     >
       <div
         className="grid h-full min-h-0"
-        style={{ gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", gap: 30 }}
+        style={{ gridTemplateColumns: "repeat(6, 1fr)", gridTemplateRows: "1fr 1fr", gap: 20 }}
       >
         {TAKEAWAYS.map((t, i) => {
           const dark = i === 0 || i === 3;
@@ -53,26 +58,27 @@ export function S20() {
               key={t.n}
               className="flex min-h-0 flex-col justify-center"
               style={{
+                gridColumn: i < 3 ? "span 2" : "span 3",
                 background: dark ? "var(--s-forest)" : "var(--s-panel)",
                 borderLeft: `10px solid ${dark ? "var(--s-lime)" : "var(--s-forest)"}`,
-                padding: "26px 32px",
+                padding: "18px 24px",
               }}
             >
               <span
                 className="slide-num"
-                style={{ color: dark ? "var(--s-lime)" : "var(--s-jade)", fontSize: 40 }}
+                style={{ color: dark ? "var(--s-lime)" : "var(--s-jade)", fontSize: 34 }}
               >
                 {t.n}
               </span>
               <p
                 className="slide-subtitle"
-                style={{ color: dark ? "#ffffff" : "var(--s-forest)", fontSize: 34, marginTop: 8 }}
+                style={{ color: dark ? "#ffffff" : "var(--s-forest)", fontSize: 29, marginTop: 6 }}
               >
                 {t.head}
               </p>
               <p
                 className="slide-body"
-                style={{ color: dark ? "#c8ddd2" : "var(--s-ink)", marginTop: 10 }}
+                style={{ color: dark ? "#c8ddd2" : "var(--s-ink)", fontSize: 23, marginTop: 8 }}
               >
                 {t.body}
               </p>

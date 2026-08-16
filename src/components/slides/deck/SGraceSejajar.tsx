@@ -10,7 +10,7 @@ export function SGraceSejajar() {
       title="Perbandingan pada himpunan variabel yang sejajar"
       metaTitle="Random Forest versus skor GRACE pada variabel sejajar"
       basis="Basis: N=1.524, 115 kejadian; protokol identik model utama (10 seed × 5-fold, imputasi median per lipatan, 500 pohon, kedalaman maksimum 6)"
-      source="Analisis ulang dataset tesis (Tabel 3.8 dan Gambar 3.12)"
+      source="Analisis ulang dataset tesis (Tabel 3.9 dan Gambar 3.17)"
       callout={
         <Callout label="Simpulan:">
           Pada informasi setara, Random Forest tidak kalah dan cenderung lebih baik (+0,0196;
@@ -25,14 +25,14 @@ export function SGraceSejajar() {
             <FigureBox
               src={FIGS.rocSejajar}
               alt="Kurva ROC skor GRACE lima dan delapan komponen dibandingkan Random Forest enam dan tiga belas parameter"
-              caption="Gambar 3.12 Kurva ROC Random Forest dan skor GRACE pada populasi penelitian"
+              caption="Gambar 3.17 Kurva ROC Random Forest dan skor GRACE pada populasi penelitian"
             />
           </div>
         </div>
 
         <div className="flex min-w-0 min-h-0 flex-col">
           <p className="slide-caption shrink-0" style={{ color: "var(--s-forest)", fontWeight: 700 }}>
-            Tabel 3.8 Perbandingan AUC pada himpunan variabel yang sejajar
+            Tabel 3.9 Perbandingan AUC pada himpunan variabel yang sejajar
           </p>
           <div className="shrink-0" style={{ marginTop: 10 }}>
             <table className="w-full" style={{ borderCollapse: "collapse" }}>
@@ -59,7 +59,7 @@ export function SGraceSejajar() {
               <tbody>
                 {[
                   ["Skor GRACE lima komponen", "0,7845", "Usia, HR, TDS, kreatinin, Killip"],
-                  ["Skor GRACE delapan komponen", "0,7767", "GRACE 2.0 lengkap (Tabel 3.7)"],
+                  ["Skor GRACE delapan komponen", "0,7767", "GRACE 2.0 lengkap"],
                   ["RF enam parameter", "0,8042", "GRACE-5 + ureum + eGFR (0,8006 ± 0,0055)"],
                   ["RF tiga belas parameter", "0,8189", "Model utama (0,8157 ± 0,0075)"],
                 ].map((r) => (

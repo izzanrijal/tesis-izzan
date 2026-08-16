@@ -11,7 +11,7 @@ export function S16() {
       title="Tiga luaran: mortalitas paling dapat diprediksi, syok kardiogenik paling sulit"
       metaTitle="Performa model untuk berbagai luaran"
       basis="Basis: model yang sama dilatih ulang untuk tiap luaran pada kohort 1.524 pasien"
-      source="Tabel 3.5, Tabel 4.1, dan Gambar 3.15 — Perbandingan kurva ROC berbagai luaran"
+      source="Tabel 3.6, Tabel 4.1, dan Gambar 3.16 — Perbandingan kurva ROC berbagai luaran"
       callout={
         <Callout label="Mengapa berbeda:">
           Syok kardiogenik adalah luaran <strong>dinamis</strong> yang dipengaruhi intervensi dan

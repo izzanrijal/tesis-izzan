@@ -8,7 +8,7 @@ function ChipRow({ label, items }: { label: string; items: string[] }) {
       <p className="slide-caption" style={{ color: "var(--s-jade)", fontWeight: 700 }}>
         {label}
       </p>
-      <div className="flex flex-wrap" style={{ gap: 10, marginTop: 10 }}>
+      <div className="flex flex-wrap" style={{ gap: 8, marginTop: 8 }}>
         {items.map((i) => (
           <Pill key={i} tone="outline">
             {i}
@@ -46,14 +46,14 @@ export function SMetode3() {
         </div>
 
         <Panel title="Variabel bebas saat admisi IGD" tone="panel">
-          <div className="flex flex-col" style={{ gap: 20 }}>
+          <div className="flex flex-col" style={{ gap: 14 }}>
             <ChipRow
               label="KLINIS"
-              items={["Usia", "Jenis kelamin", "Tekanan darah sistolik", "Denyut nadi", "Laju napas", "Kelas Killip"]}
+              items={["Usia", "Jenis kelamin", "Tekanan darah sistolik", "Tekanan darah diastolik", "Denyut nadi", "Laju napas", "Kebutuhan oksigen", "Kelas Killip"]}
             />
             <ChipRow
               label="LABORATORIUM"
-              items={["Hemoglobin", "Ureum", "Kreatinin", "eGFR", "Natrium", "Kalium", "GDS", "APTT", "NLR", "SII"]}
+              items={["Hemoglobin", "Trombosit", "Leukosit", "GOT", "GPT", "Ureum", "Kreatinin", "eGFR", "Natrium", "Kalium", "GDS", "APTT", "NLR", "SII"]}
             />
             <ChipRow label="EKOKARDIOGRAFI" items={["LVEF", "LVOT VTI", "TAPSE"]} />
             <ChipRow label="ELEKTROKARDIOGRAFI" items={["Tipe SKA: STEMI atau NSTEMI"]} />

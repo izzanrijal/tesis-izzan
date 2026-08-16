@@ -14,8 +14,9 @@ export function S05() {
       source="Diagram alur STROBE penelitian (repositori analisis)"
       callout={
         <Callout label="Hasil seleksi:">
-          <strong>1.524 pasien</strong> masuk analisis akhir dengan <strong>115 kematian</strong>{" "}
-          in-hospital (7,5%) — sekitar 10 kejadian per variabel untuk 13 prediktor.
+          <strong>1.952 rekam tersaring → 379 eksklusi → 1.524 analisis akhir</strong>, dengan{" "}
+          <strong>115 kematian</strong> in-hospital (7,5%) — sekitar 10 kejadian per variabel untuk
+          13 prediktor.
         </Callout>
       }
     >
