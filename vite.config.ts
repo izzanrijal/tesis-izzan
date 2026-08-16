@@ -12,4 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    server: {
+      // Izinkan akses via Cloudflare tunnel (DNS-rebinding protection Vite)
+      allowedHosts: [".trycloudflare.com", ".ahlijantung.id"],
+    },
+  },
 });

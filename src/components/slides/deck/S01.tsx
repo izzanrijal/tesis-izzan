@@ -155,20 +155,9 @@ export function S01() {
         </div>
 
         <div
-          className="relative flex shrink-0 items-center justify-between"
+          className="relative flex shrink-0 items-center justify-end"
           style={{ background: "var(--s-lime)", padding: "0 54px", height: 96 }}
         >
-          <p
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 700,
-              color: "var(--s-forest)",
-              fontSize: 22,
-              letterSpacing: "0.06em",
-            }}
-          >
-            BUKTI DULU, BARU KEPUTUSAN
-          </p>
           <span className="slide-num" style={{ color: "var(--s-forest)", fontSize: 20 }}>
             01 / {TOTAL_SLIDES}
           </span>
