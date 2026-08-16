@@ -3,25 +3,25 @@ import bandEcho from "@/assets/band-echo.jpg";
 import bandData from "@/assets/band-data.jpg";
 import bandClinic from "@/assets/band-clinic.jpg";
 
-import figRoc from "@/assets/fig01_roc_curve.png.asset.json";
-import figThreshold from "@/assets/fig02_threshold_performance.png.asset.json";
-import figCalibration from "@/assets/fig04_calibration.png.asset.json";
-import figDca from "@/assets/fig05_dca.png.asset.json";
-import figPr from "@/assets/fig06_pr_curve.png.asset.json";
-import figProb from "@/assets/fig07_prob_distribution.png.asset.json";
-import figImportance from "@/assets/fig08_feature_importance.png.asset.json";
-import figAblation from "@/assets/fig09_ablation.png.asset.json";
-import figFeatureCount from "@/assets/fig_feature_count.png.asset.json";
-import figShapBar from "@/assets/shap_bar.png.asset.json";
-import figShapBees from "@/assets/shap_beeswarm.png.asset.json";
-import figShapWaterfall from "@/assets/shap_waterfall.png.asset.json";
-import figTriage from "@/assets/fig10_triage.png.asset.json";
-import figRoc3 from "@/assets/fig11_roc_3outcomes.png.asset.json";
-import figRocGrace from "@/assets/fig11_roc_comparison.png.asset.json";
-import figRocSejajar from "@/assets/roc-grace5-rf6.png.asset.json";
-import figStrobe from "@/assets/strobe_flowchart_v6.png.asset.json";
-import svgTeori from "@/assets/kerangka-teori.svg.asset.json";
-import svgKonsep from "@/assets/kerangka-konsep.svg.asset.json";
+const figRoc = { url: "/figures/fig01_roc_curve.png" };
+const figThreshold = { url: "/figures/fig02_threshold_performance.png" };
+const figCalibration = { url: "/figures/fig04_calibration.png" };
+const figDca = { url: "/figures/fig05_dca.png" };
+const figPr = { url: "/figures/fig06_pr_curve.png" };
+const figProb = { url: "/figures/fig07_prob_distribution.png" };
+const figImportance = { url: "/figures/fig08_feature_importance.png" };
+const figAblation = { url: "/figures/fig09_ablation.png" };
+const figFeatureCount = { url: "/figures/fig_feature_count.png" };
+const figShapBar = { url: "/figures/shap_bar.png" };
+const figShapBees = { url: "/figures/shap_beeswarm.png" };
+const figShapWaterfall = { url: "/figures/shap_waterfall.png" };
+const figTriage = { url: "/figures/fig10_triage.png" };
+const figRoc3 = { url: "/figures/fig11_roc_3outcomes.png" };
+const figRocGrace = { url: "/figures/fig11_roc_comparison.png" };
+const figRocSejajar = { url: "/figures/roc-grace5-rf6.png" };
+const figStrobe = { url: "/figures/strobe_flowchart_v6.png" };
+const svgTeori = { url: "/figures/kerangka-teori.svg" };
+const svgKonsep = { url: "/figures/kerangka-konsep.svg" };
 
 export const BANDS = {
   ed: bandEd,

@@ -1,4 +1,4 @@
-import logo from "@/assets/logos-instansi.png.asset.json";
+const logo = { url: "/figures/logos-instansi.png" };
 
 /** Logo instansi kecil di sudut kanan atas setiap slide. */
 export function DeckLogo() {
