@@ -134,24 +134,6 @@ export function S01() {
             <br />
             TESIS
           </p>
-          <p
-            className="slide-body"
-            style={{ color: "#a9c9ba", marginTop: 24, lineHeight: 1.55 }}
-          >
-            Program Pendidikan Dokter Spesialis
-            <br />
-            Ilmu Penyakit Jantung dan Pembuluh Darah
-          </p>
-
-          <div style={{ height: 1, background: "#2f5e46", margin: "30px 0" }} />
-
-          <p style={{ fontSize: 20, lineHeight: 1.6, color: "#8fb7a2", letterSpacing: "0.04em" }}>
-            Universitas Hasanuddin
-            <br />
-            PJT RSUP Dr. Wahidin Sudirohusodo
-            <br />
-            Makassar · 2026
-          </p>
         </div>
 
         <div

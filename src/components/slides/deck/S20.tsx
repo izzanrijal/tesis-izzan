@@ -14,7 +14,7 @@ const TAKEAWAYS = [
   },
   {
     n: "03",
-    head: "Gradien triase 48 kali lipat",
+    head: "Gradien triase 45 kali lipat",
     body: "Sistem tiga tingkat dari dua ambang model menghasilkan mortalitas 0,5% → 24,4%, memungkinkan alokasi sumber daya berbasis risiko.",
   },
   {
