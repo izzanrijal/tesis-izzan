@@ -39,11 +39,11 @@ export function SMetode5() {
           <BulletList>
             <Bullet>
               Penelitian memperoleh persetujuan Komisi Etik Penelitian Kesehatan Fakultas
-              Kedokteran Universitas Hasanuddin.
+              Kedokteran Universitas Hasanuddin (No. 890/UN4.6.4.5.31/PP36/2026).
             </Bullet>
             <Bullet>
               Data bersifat sekunder dan dianalisis dalam bentuk anonim; tidak ada intervensi
-              terhadap pasien.
+              terhadap pasien dan mematuhi prinsip Deklarasi Helsinki serta regulasi lokal.
             </Bullet>
             <Bullet>
               Kerahasiaan dijaga: akses basis data terbatas pada tim peneliti dan hanya digunakan

@@ -9,6 +9,8 @@ const PRIORITAS = [
   { p: "Prioritas 4", t: "Model sederhana tanpa parameter ekokardiografi untuk fasilitas terbatas" },
   { p: "Prioritas 5", t: "Analisis fairness: bias menurut jenis kelamin, usia, dan komorbiditas" },
   { p: "Prioritas 6", t: "Prediksi dinamis dengan risiko yang diperbarui seiring perubahan klinis" },
+  { p: "Prioritas 7", t: "Tambah prediktor laktat, pH, LDH, dan biomarker inflamasi bila tersedia rutin — terutama untuk prediksi syok kardiogenik" },
+  { p: "Prioritas 8", t: "Studi prospektif dengan protokol ekokardiografi seragam dan definisi luaran ketat" },
 ];
 
 const REFS = [
@@ -26,13 +28,13 @@ export function S21() {
       index={21}
       section="Penutup"
       band={BANDS.clinic}
-      title="Jalan ke depan: enam prioritas dan referensi"
+      title="Jalan ke depan: delapan prioritas dan referensi"
       metaTitle="Saran penelitian lanjutan, referensi, dan sesi diskusi"
       basis="Basis: Bab 5.2; dataset 1.524 pasien PJT RSUP Dr. Wahidin Sudirohusodo, Makassar (2024–2025)"
       source="Bab 5.2 — Saran; daftar referensi terpilih"
     >
       <div className="grid h-full min-h-0" style={{ gridTemplateColumns: "1fr 720px", gap: 52 }}>
-        <div className="flex min-w-0 flex-col" style={{ gap: 14 }}>
+        <div className="flex min-w-0 flex-col" style={{ gap: 9 }}>
           {PRIORITAS.map((r, i) => (
             <div
               key={r.p}
@@ -40,17 +42,17 @@ export function S21() {
               style={{
                 background: i < 2 ? "var(--s-mint)" : "var(--s-panel)",
                 borderLeft: `8px solid ${i < 2 ? "var(--s-forest)" : "var(--s-rule)"}`,
-                padding: "14px 24px",
-                gap: 22,
+                padding: "9px 18px",
+                gap: 16,
               }}
             >
               <span
                 className="slide-caption shrink-0"
-                style={{ color: "var(--s-jade)", fontWeight: 700, width: 140 }}
+                style={{ color: "var(--s-jade)", fontWeight: 700, width: 132, fontSize: 20 }}
               >
                 {r.p.toUpperCase()}
               </span>
-              <span className="slide-body min-w-0" style={{ color: "var(--s-ink)" }}>
+              <span className="slide-body min-w-0" style={{ color: "var(--s-ink)", fontSize: 22 }}>
                 {r.t}
               </span>
             </div>

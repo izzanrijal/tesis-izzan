@@ -27,6 +27,8 @@ export function S03() {
               ["GRACE", "Mortalitas", "0,79 – 0,80", "Sedang"],
               ["TIMI STEMI", "Mortalitas", "0,76", "Sedang"],
               ["TIMI NSTEMI", "Mortalitas", "0,75", "Sedang"],
+              ["qSOFA", "Mortalitas", "0,65", "Lemah"],
+              ["Jentzer Score", "SKG, CICU", "0,76", "Sedang"],
             ]}
           />
           <p className="slide-caption" style={{ color: "var(--s-slate)", marginTop: 22 }}>

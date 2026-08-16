@@ -10,7 +10,7 @@ export function S13() {
       title="Triase tiga tingkat memisahkan mortalitas 0,5% hingga 24,4%"
       metaTitle="Sistem triase bertingkat berbasis probabilitas"
       basis="Basis: strata diturunkan dan dinilai pada prediksi out-of-fold kohort yang sama (validasi internal)"
-      source="Tabel 3.4 dan Gambar 3.14 — Sistem triase bertingkat"
+      source="Tabel 3.5 dan Gambar 3.15 — Sistem triase bertingkat"
       callout={
         <Callout label="Batasan tegas:">
           Label ward, HCU, dan ICU adalah <strong>usulan strata risiko</strong>, bukan

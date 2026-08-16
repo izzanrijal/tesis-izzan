@@ -4,7 +4,7 @@ import { Callout, ContentSlide } from "../chrome";
 const DOMAINS = [
   {
     label: "Demografi",
-    items: ["Usia", "Jenis kelamin"],
+    items: ["Usia"],
     tone: "paper",
   },
   {
