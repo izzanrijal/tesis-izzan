@@ -50,11 +50,13 @@ export type SlideEntry = { title: string; Component: ComponentType };
 
 export const SLIDES: SlideEntry[] = [
   { title: "Halaman judul tesis", Component: S01 },
+  { title: "Bagian 1 — Pendahuluan", Component: SecPendahuluan },
   { title: "Pembunuh senyap di IGD", Component: S02 },
   { title: "Keterbatasan GRACE & TIMI", Component: S03 },
   { title: "Machine learning: paradigma baru", Component: S04 },
   { title: "Rumusan masalah & tujuan", Component: SRumusanTujuan },
   { title: "Manfaat penelitian", Component: SManfaat },
+  { title: "Bagian 2 — Metode Penelitian", Component: SecMetode },
   { title: "Kerangka teori", Component: SKerangkaTeori },
   { title: "Kerangka konsep", Component: SKerangkaKonsep },
   { title: "Desain, tempat & sampel", Component: SMetode1 },
@@ -69,6 +71,7 @@ export const SLIDES: SlideEntry[] = [
   { title: "Desain studi & alur STROBE", Component: S05 },
   { title: "13 prediktor", Component: S06 },
   { title: "Pengembangan model & protokol validasi", Component: SModel },
+  { title: "Bagian 3 — Hasil", Component: SecHasil },
   { title: "Tabel 3.1 — karakteristik dasar", Component: STabel31 },
   { title: "Tabel 3.2 — STEMI vs NSTEMI", Component: STabel32 },
   { title: "Analisis jumlah parameter optimal", Component: SParamCount },
@@ -87,6 +90,7 @@ export const SLIDES: SlideEntry[] = [
   { title: "RF vs XGBoost", Component: S14 },
   { title: "RF vs GRACE 2.0", Component: S15 },
   { title: "Perbandingan variabel sejajar", Component: SGraceSejajar },
+  { title: "Bagian 4 — Pembahasan", Component: SecPembahasan },
   { title: "Pembahasan 4.1 — performa model", Component: P41 },
   { title: "Pembahasan 4.2 — pemilihan algoritma", Component: P42 },
   { title: "Pembahasan 4.3 — fungsi ginjal", Component: P43 },
@@ -97,6 +101,7 @@ export const SLIDES: SlideEntry[] = [
   { title: "Pembahasan 4.9 — implikasi klinis", Component: S17 },
   { title: "Pembahasan 4.10 — keterbatasan", Component: S18 },
   { title: "Pembahasan 4.11 — TRIPOD+AI", Component: S19 },
+  { title: "Bagian 5 — Kesimpulan", Component: SecKesimpulan },
   { title: "Kesimpulan", Component: S20 },
   { title: "Saran & referensi", Component: S21 },
 ];
