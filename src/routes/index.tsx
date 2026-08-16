@@ -4,6 +4,7 @@ import { ScaledSlide } from "@/components/slides/SlideLayout";
 import { SLIDES } from "@/components/slides/registry";
 import { SlideIndexProvider } from "@/components/slides/SlideIndexContext";
 import { DECK_TITLE } from "@/lib/deck-data";
+import { DeckLogo } from "@/components/slides/DeckLogo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -77,7 +78,10 @@ function Deck() {
         {SLIDES.map(({ Component }, i) => (
           <div key={i} className="deck-print-page">
             <SlideIndexProvider index={i + 1}>
-              <Component />
+              <div className="relative" style={{ width: 1920, height: 1080 }}>
+                <Component />
+                <DeckLogo />
+              </div>
             </SlideIndexProvider>
           </div>
         ))}
@@ -108,7 +112,10 @@ function Deck() {
               >
                 <ScaledSlide>
                   <SlideIndexProvider index={i + 1}>
-                    <Component />
+                    <div className="relative" style={{ width: 1920, height: 1080 }}>
+                      <Component />
+                      <DeckLogo />
+                    </div>
                   </SlideIndexProvider>
                 </ScaledSlide>
               </div>
@@ -129,7 +136,10 @@ function Deck() {
       <div className="min-h-0 flex-1">
         <ScaledSlide>
           <SlideIndexProvider index={slide}>
-            <Current />
+            <div className="relative" style={{ width: 1920, height: 1080 }}>
+              <Current />
+              <DeckLogo />
+            </div>
           </SlideIndexProvider>
         </ScaledSlide>
       </div>
