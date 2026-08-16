@@ -32,6 +32,7 @@ import { S20 } from "./deck/S20";
 import { S21 } from "./deck/S21";
 import { SRumusanTujuan } from "./deck/SRumusanTujuan";
 import { SManfaat } from "./deck/SManfaat";
+import { SDemo } from "./deck/SDemo";
 import { SMetode1 } from "./deck/SMetode1";
 import { SMetode2 } from "./deck/SMetode2";
 import { SMetode3 } from "./deck/SMetode3";
@@ -104,4 +105,5 @@ export const SLIDES: SlideEntry[] = [
   { title: "Bagian 5 — Kesimpulan", Component: SecKesimpulan },
   { title: "Kesimpulan", Component: S20 },
   { title: "Saran & referensi", Component: S21 },
+  { title: "Demo langsung — model bekerja real-time", Component: SDemo },
 ];
