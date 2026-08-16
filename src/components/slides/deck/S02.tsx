@@ -1,6 +1,6 @@
 import { BANDS } from "@/lib/deck-data";
 import { Callout, ContentSlide } from "../chrome";
-import { Bullet, BulletList, ColTitle, Panel, Stat } from "../ui";
+import { Bullet, BulletList, ColTitle, Panel } from "../ui";
 
 export function S02() {
   return (
@@ -21,15 +21,55 @@ export function S02() {
     >
       <div className="grid h-full min-h-0" style={{ gridTemplateColumns: "1fr 640px", gap: 56 }}>
         <div className="flex min-w-0 flex-col justify-between">
-          <div className="flex gap-16">
-            <Stat label="Mortalitas in-hospital SKA" value="4–12" unit="%" note="Rentang global" />
-            <Stat
-              label="Bila syok kardiogenik terjadi"
-              value="30–50"
-              unit="%"
-              note="Mortalitas melonjak"
-              tone="flag"
-            />
+          <div className="grid min-h-0 flex-1" style={{ gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+            <div
+              className="flex flex-col justify-between"
+              style={{
+                background: "var(--s-panel)",
+                borderTop: "10px solid var(--s-forest)",
+                padding: "30px 32px",
+              }}
+            >
+              <p className="slide-caption" style={{ color: "var(--s-slate)", fontWeight: 700 }}>
+                Mortalitas in-hospital SKA
+              </p>
+              <p className="slide-num" style={{ color: "var(--s-forest)", fontSize: 96, lineHeight: 1 }}>
+                4–12
+                <span
+                  className="slide-body-lg"
+                  style={{ color: "var(--s-slate)", fontWeight: 400, marginLeft: 10 }}
+                >
+                  %
+                </span>
+              </p>
+              <p className="slide-caption" style={{ color: "var(--s-jade)", fontWeight: 700 }}>
+                Rentang global
+              </p>
+            </div>
+            <div
+              className="flex flex-col justify-between"
+              style={{
+                background: "#fbe6ee",
+                borderTop: "10px solid var(--s-flag)",
+                padding: "30px 32px",
+              }}
+            >
+              <p className="slide-caption" style={{ color: "var(--s-slate)", fontWeight: 700 }}>
+                Bila syok kardiogenik terjadi
+              </p>
+              <p className="slide-num" style={{ color: "var(--s-flag)", fontSize: 96, lineHeight: 1 }}>
+                30–50
+                <span
+                  className="slide-body-lg"
+                  style={{ color: "var(--s-slate)", fontWeight: 400, marginLeft: 10 }}
+                >
+                  %
+                </span>
+              </p>
+              <p className="slide-caption" style={{ color: "var(--s-flag)", fontWeight: 700 }}>
+                Mortalitas melonjak
+              </p>
+            </div>
           </div>
 
           <div style={{ height: 1, background: "var(--s-rule)" }} />

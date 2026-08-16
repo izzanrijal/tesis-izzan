@@ -57,7 +57,7 @@ export function S13() {
           ))}
           <p className="slide-caption" style={{ color: "var(--s-slate)" }}>
             Kelompok ICU hanya 22% populasi namun memuat 82 dari 115 kematian — gradien risiko
-            sekitar 48 kali antara strata terendah dan tertinggi.
+            sekitar 45 kali antara strata terendah dan tertinggi.
           </p>
         </div>
       </div>
