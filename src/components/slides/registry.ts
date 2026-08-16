@@ -38,6 +38,13 @@ import { SMetode3 } from "./deck/SMetode3";
 import { SMetode4, SMetode4b, SMetode4c, SMetode4d } from "./deck/SMetode4";
 import { SMetode5 } from "./deck/SMetode5";
 import { SMetode6 } from "./deck/SMetode6";
+import {
+  SecPendahuluan,
+  SecMetode,
+  SecHasil,
+  SecPembahasan,
+  SecKesimpulan,
+} from "./deck/SSection";
 
 export type SlideEntry = { title: string; Component: ComponentType };
 
