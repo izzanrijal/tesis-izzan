@@ -83,7 +83,7 @@ function SectionSlide({
               className="slide-chrome"
               style={{
                 whiteSpace: "nowrap",
-                color: "#d7ead f".replace(" ", ""),
+                color: "#d7eadf",
                 border: "1px solid #2f5e46",
                 borderRadius: 999,
                 padding: "8px 18px",
