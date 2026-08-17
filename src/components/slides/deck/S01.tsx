@@ -128,11 +128,11 @@ export function S01() {
               marginTop: 26,
             }}
           >
-            SIDANG
-            <br />
             HASIL
             <br />
-            TESIS
+            PENELITIAN
+            <br />
+            (TESIS)
           </p>
         </div>
 
