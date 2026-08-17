@@ -19,7 +19,7 @@ const DOMAINS = [
   },
   {
     label: "Ekokardiografi",
-    items: ["LVEF (Simpson biplane)", "LVOT VTI", "TAPSE"],
+    items: ["LVEF", "LVOT VTI", "TAPSE"],
     tone: "accent",
   },
   {
